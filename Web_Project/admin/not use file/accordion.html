@@ -1,10 +1,10 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>X-editable | Nalika - Material Admin Template</title>
+    <title>Accordion | Nalika - Material Admin Template</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -50,12 +50,9 @@
 		============================================ -->
     <link rel="stylesheet" href="../css/calendar/fullcalendar.min.css">
     <link rel="stylesheet" href="../css/calendar/fullcalendar.print.min.css">
-    <!-- x-editor CSS
-		============================================ -->
-    <link rel="stylesheet" href="../css/editor/select2.css">
-    <link rel="stylesheet" href="../css/editor/datetimepicker.css">
-    <link rel="stylesheet" href="../css/editor/bootstrap-editable.css">
-    <link rel="stylesheet" href="../css/editor/x-editor-style.css">
+    <!-- accordions CSS
+         ============================================ -->
+    <link rel="stylesheet" href="../css/accordions.css">
     <!-- style CSS
 		============================================ -->
     <link rel="stylesheet" href="../style.css">
@@ -68,10 +65,6 @@
 </head>
 
 <body>
-    <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
@@ -83,17 +76,22 @@
                     <ul class="metismenu" id="menu1">
                         <li>
                             <a class="has-arrow" href="../index.html">
-								   <i class="fa big-icon fa-home icon-wrap"></i>
-								   <span class="mini-click-non">Ecommerce</span>
-								</a>
+							   <i class="fa big-icon fa-home icon-wrap"></i>
+							   <span class="mini-click-non">Ecommerce</span>
+							</a>
                             <ul class="submenu-angle" aria-expanded="true">
                                 <li><a title="Dashboard v.1" href="../index.html"><span class="mini-sub-pro">Bảng điều khiển</span></a></li>
                                 <li><a title="Product List" href="../product-list.html"><span class="mini-sub-pro">Danh sách sản phẩm</span></a></li>
                                 <li><a title="Product List" href="../product-list.html"><span class="mini-sub-pro">Danh sách đơn hàng</span></a></li>
+
                                 <li><a title="Product Detail" href="../product-detail.html"><span class="mini-sub-pro">Product Detail</span></a></li>
                                 <li><a title="Product Payment" href="../product-payment.html"><span class="mini-sub-pro">Product Payment</span></a></li>
                                 <li><a title="Analytics" href="../analytics.html"><span class="mini-sub-pro">Analytics</span></a></li>
                                 <li><a title="Widgets" href="../widgets.html"><span class="mini-sub-pro">Widgets</span></a></li>
+                                <li><a title="Product Payment" href="../product-payment.html"><span class="mini-sub-pro">Product Payment</span></a></li>
+                                <li><a title="Analytics" href="../analytics.html"><span class="mini-sub-pro">Analytics</span></a></li>
+                                <li><a title="Widgets" href="widgets.html"><span class="mini-sub-pro">Widgets</span></a></li>
+
                             </ul>
                         </li>
                         <li>
@@ -104,79 +102,7 @@
                                 <li><a title="Compose Mail" href="../mailbox-compose.html"><span class="mini-sub-pro">Compose Mail</span></a></li>
                             </ul>
                         </li>
-                        <li class="active">
-                            <a class="has-arrow" href="../mailbox.html" aria-expanded="false"><i class="fa big-icon fa-flask icon-wrap"></i> <span class="mini-click-non">Interface</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Google Map" href="google-map.html"><span class="mini-sub-pro">Google Map</span></a></li>
-                                <li><a title="Data Maps" href="data-maps.html"><span class="mini-sub-pro">Data Maps</span></a></li>
-                                <li><a title="Pdf Viewer" href="pdf-viewer.html"><span class="mini-sub-pro">Pdf Viewer</span></a></li>
-                                <li><a title="X-Editable" href="x-editable.html"><span class="mini-sub-pro">X-Editable</span></a></li>
-                                <li><a title="Code Editor" href="../code-editor.html"><span class="mini-sub-pro">Code Editor</span></a></li>
-                                <li><a title="Tree View" href="tree-view.html"><span class="mini-sub-pro">Tree View</span></a></li>
-                                <li><a title="Preloader" href="preloader.html"><span class="mini-sub-pro">Preloader</span></a></li>
-                                <li><a title="Images Cropper" href="../images-cropper.html"><span class="mini-sub-pro">Images Cropper</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="has-arrow" href="../mailbox.html" aria-expanded="false"><i class="fa big-icon fa-pie-chart icon-wrap"></i> <span class="mini-click-non">Miscellaneous</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="File Manager" href="../file-manager.html"><span class="mini-sub-pro">File Manager</span></a></li>
-                                <li><a title="Blog" href="../blog.html"><span class="mini-sub-pro">Blog</span></a></li>
-                                <li><a title="Blog Details" href="../blog-details.html"><span class="mini-sub-pro">Blog Details</span></a></li>
-                                <li><a title="404 Page" href="../404.html"><span class="mini-sub-pro">404 Page</span></a></li>
-                                <li><a title="500 Page" href="../500.html"><span class="mini-sub-pro">500 Page</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="has-arrow" href="../mailbox.html" aria-expanded="false"><i class="fa big-icon fa-bar-chart-o icon-wrap"></i> <span class="mini-click-non">Charts</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Bar Charts" href="../bar-charts.html"><span class="mini-sub-pro">Bar Charts</span></a></li>
-                                <li><a title="Line Charts" href="../line-charts.html"><span class="mini-sub-pro">Line Charts</span></a></li>
-                                <li><a title="Area Charts" href="../area-charts.html"><span class="mini-sub-pro">Area Charts</span></a></li>
-                                <li><a title="Rounded Charts" href="rounded-chart.html"><span class="mini-sub-pro">Rounded Charts</span></a></li>
-                                <li><a title="C3 Charts" href="../c3.html"><span class="mini-sub-pro">C3 Charts</span></a></li>
-                                <li><a title="Sparkline Charts" href="sparkline.html"><span class="mini-sub-pro">Sparkline Charts</span></a></li>
-                                <li><a title="Peity Charts" href="peity.html"><span class="mini-sub-pro">Peity Charts</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="has-arrow" href="../mailbox.html" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap"></i> <span class="mini-click-non">Data Tables</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Peity Charts" href="static-table.html"><span class="mini-sub-pro">Static Table</span></a></li>
-                                <li><a title="Data Table" href="data-table.html"><span class="mini-sub-pro">Data Table</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="has-arrow" href="../mailbox.html" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap"></i> <span class="mini-click-non">Forms Elements</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Basic Form Elements" href="../basic-form-element.html"><span class="mini-sub-pro">Bc Form Elements</span></a></li>
-                                <li><a title="Advance Form Elements" href="../advance-form-element.html"><span class="mini-sub-pro">Ad Form Elements</span></a></li>
-                                <li><a title="Password Meter" href="../password-meter.html"><span class="mini-sub-pro">Password Meter</span></a></li>
-                                <li><a title="Multi Upload" href="../multi-upload.html"><span class="mini-sub-pro">Multi Upload</span></a></li>
-                                <li><a title="Text Editor" href="tinymc.html"><span class="mini-sub-pro">Text Editor</span></a></li>
-                                <li><a title="Dual List Box" href="../dual-list-box.html"><span class="mini-sub-pro">Dual List Box</span></a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="has-arrow" href="../mailbox.html" aria-expanded="false"><i class="fa big-icon fa-desktop icon-wrap"></i> <span class="mini-click-non">App views</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Notifications" href="../notifications.html"><span class="mini-sub-pro">Notifications</span></a></li>
-                                <li><a title="Alerts" href="../alerts.html"><span class="mini-sub-pro">Alerts</span></a></li>
-                                <li><a title="Modals" href="../modals.html"><span class="mini-sub-pro">Modals</span></a></li>
-                                <li><a title="Buttons" href="../buttons.html"><span class="mini-sub-pro">Buttons</span></a></li>
-                                <li><a title="Tabs" href="tabs.html"><span class="mini-sub-pro">Tabs</span></a></li>
-                                <li><a title="Accordion" href="../accordion.html"><span class="mini-sub-pro">Accordion</span></a></li>
-                            </ul>
-                        </li>
-                        <li id="removable">
-                            <a class="has-arrow" href="#" aria-expanded="false"><i class="fa big-icon fa-files-o icon-wrap"></i> <span class="mini-click-non">Pages</span></a>
-                            <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="Login" href="../login.html"><span class="mini-sub-pro">Login</span></a></li>
-                                <li><a title="Register" href="../register.html"><span class="mini-sub-pro">Register</span></a></li>
-                                <li><a title="Lock" href="../lock.html"><span class="mini-sub-pro">Lock</span></a></li>
-                                <li><a title="Password Recovery" href="../password-recovery.html"><span class="mini-sub-pro">Password Recovery</span></a></li>
-                            </ul>
-                        </li>
+
                     </ul>
                 </nav>
             </div>
@@ -769,11 +695,16 @@
                                                 <li><a href="index-3.html">Dashboard v.3</a></li>
                                                 <li><a href="../product-list.html">Product List</a></li>
                                                 <li><a href="../product-edit.html">Product Edit</a></li>
+
                                                 <li><a href="../product-detail.html">Product Detail</a></li>
                                                 <li><a href="../product-cart.html">Product Cart</a></li>
                                                 <li><a href="../product-payment.html">Product Payment</a></li>
                                                 <li><a href="../analytics.html">Analytics</a></li>
                                                 <li><a href="../widgets.html">Widgets</a></li>
+                                                <li><a href="../product-cart.html">Product Cart</a></li>
+                                                <li><a href="../product-payment.html">Product Payment</a></li>
+                                                <li><a href="../analytics.html">Analytics</a></li>
+                                                <li><a href="widgets.html">Widgets</a></li>
                                             </ul>
                                         </li>
                                         <li><a data-toggle="collapse" data-target="#demo" href="#">Mailbox <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
@@ -788,7 +719,7 @@
                                         </li>
                                         <li><a data-toggle="collapse" data-target="#others" href="#">Miscellaneous <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul id="others" class="collapse dropdown-header-top">
-                                                <li><a href="../file-manager.html">File Manager</a></li>
+                                                <li><a href="file-manager.html">File Manager</a></li>
                                                 <li><a href="contacts.html">Contacts Client</a></li>
                                                 <li><a href="projects.html">Project</a></li>
                                                 <li><a href="project-details.html">Project Details</a></li>
@@ -808,27 +739,27 @@
                                                 </li>
                                                 <li><a href="x-editable.html">X-Editable</a>
                                                 </li>
-                                                <li><a href="../code-editor.html">Code Editor</a>
+                                                <li><a href="code-editor.html">Code Editor</a>
                                                 </li>
                                                 <li><a href="tree-view.html">Tree View</a>
                                                 </li>
                                                 <li><a href="preloader.html">Preloader</a>
                                                 </li>
-                                                <li><a href="../images-cropper.html">Images Cropper</a>
+                                                <li><a href="images-cropper.html">Images Cropper</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li><a data-toggle="collapse" data-target="#Chartsmob" href="#">Charts <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul id="Chartsmob" class="collapse dropdown-header-top">
-                                                <li><a href="../bar-charts.html">Bar Charts</a>
+                                                <li><a href="bar-charts.html">Bar Charts</a>
                                                 </li>
-                                                <li><a href="../line-charts.html">Line Charts</a>
+                                                <li><a href="line-charts.html">Line Charts</a>
                                                 </li>
-                                                <li><a href="../area-charts.html">Area Charts</a>
+                                                <li><a href="area-charts.html">Area Charts</a>
                                                 </li>
                                                 <li><a href="rounded-chart.html">Rounded Charts</a>
                                                 </li>
-                                                <li><a href="../c3.html">C3 Charts</a>
+                                                <li><a href="c3.html">C3 Charts</a>
                                                 </li>
                                                 <li><a href="sparkline.html">Sparkline Charts</a>
                                                 </li>
@@ -846,9 +777,9 @@
                                         </li>
                                         <li><a data-toggle="collapse" data-target="#formsmob" href="#">Forms <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul id="formsmob" class="collapse dropdown-header-top">
-                                                <li><a href="../basic-form-element.html">Basic Form Elements</a>
+                                                <li><a href="basic-form-element.html">Basic Form Elements</a>
                                                 </li>
-                                                <li><a href="../advance-form-element.html">Advanced Form Elements</a>
+                                                <li><a href="advance-form-element.html">Advanced Form Elements</a>
                                                 </li>
                                                 <li><a href="../password-meter.html">Password Meter</a>
                                                 </li>
@@ -856,15 +787,15 @@
                                                 </li>
                                                 <li><a href="tinymc.html">Text Editor</a>
                                                 </li>
-                                                <li><a href="../dual-list-box.html">Dual List Box</a>
+                                                <li><a href="dual-list-box.html">Dual List Box</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li><a data-toggle="collapse" data-target="#Appviewsmob" href="#">App views <span class="admin-project-icon adminpro-icon adminpro-down-arrow"></span></a>
                                             <ul id="Appviewsmob" class="collapse dropdown-header-top">
-                                                <li><a href="../basic-form-element.html">Basic Form Elements</a>
+                                                <li><a href="basic-form-element.html">Basic Form Elements</a>
                                                 </li>
-                                                <li><a href="../advance-form-element.html">Advanced Form Elements</a>
+                                                <li><a href="advance-form-element.html">Advanced Form Elements</a>
                                                 </li>
                                                 <li><a href="../password-meter.html">Password Meter</a>
                                                 </li>
@@ -872,7 +803,7 @@
                                                 </li>
                                                 <li><a href="tinymc.html">Text Editor</a>
                                                 </li>
-                                                <li><a href="../dual-list-box.html">Dual List Box</a>
+                                                <li><a href="dual-list-box.html">Dual List Box</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -914,7 +845,7 @@
                                         <ul class="breadcome-menu">
                                             <li><a href="#">Home</a> <span class="bread-slash">/</span>
                                             </li>
-                                            <li><span class="bread-blod">X-editable</span>
+                                            <li><span class="bread-blod">Accordion</span>
                                             </li>
                                         </ul>
                                     </div>
@@ -925,106 +856,140 @@
                 </div>
             </div>
         </div>
-        <!-- x-editable Start-->
-        <div class="x-editable-area mg-tb-15">
+        <!-- accordion start-->
+        <div class="adminpro-accordion-area mg-tb-15">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="x-editable-list">
+                        <div class="tab-content-details mg-b-30">
+                            <h2>Custom Animate accordion Bootstrap</h2>
+                            <p>These are the Custom Animate accordion Bootstrap. Using animate bounce, flash, pulse, rubberBand, shake, swing, tada, wobble, jello, bounceIn, bounceInDown, bounceInLeft, bounceInRight, bounceInUp, fadeIn, fadeInDown, fadeInDownBig,
+                                fadeInLeft, fadeInLeftBig, fadeInRight, fadeInRightBig, fadeInUp, fadeInUpBig, flipInX, flipInY, lightSpeedIn, rotateIn, rotateInDownLeft, rotateInDownRight, rotateInUpLeft, rotateInUpRight, rollIn, zoomIn, zoomInDown,
+                                zoomInLeft, zoomInRight, zoomInUp etc.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="admin-pro-accordion-wrap responsive-mg-b-30">
                             <div class="alert-title">
-                                <h2>X-editable</h2>
-                                <p>There are a few classes working together for editable. Base class editableform is form with single input and two buttons. Input can be one of several input types (text, textarea, etc). Form markup is performed in plain
-                                    HTML or can be extended by some library (bootstrap, jquery-ui). editableContainer includes editableform and shows it in popup or inline mode. When popup it can use any container for display (popover, tooltip, etc).
-                                    Final class editable binds editableContainer to DOM element storing value and being updated after user submits new value.</p>
+                                <h2>Animate bounce Accordion</h2>
+                                <p>These are the Custom bootstrap Animate bounce Accordion style 1</p>
                             </div>
-                            <table id="user" class="table table-bordered table-striped x-editor-custom">
-                                <tbody>
-                                    <tr>
-                                        <td style="width=35%">Simple text field</td>
-                                        <td style="width=65%"><a href="#" id="username" data-type="text" data-pk="1" data-title="Enter username">superuser</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Empty text field, required</td>
-                                        <td>
-                                            <a href="#" id="firstname" data-type="text" data-pk="1" data-placement="right" data-placeholder="Required" data-title="Enter your firstname"></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Select, local array, custom display</td>
-                                        <td>
-                                            <a href="#" id="sex" data-type="select" data-pk="1" data-value="" data-title="Select sex"></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Select, remote array, no buttons</td>
-                                        <td><a href="#" id="group" data-type="select" data-pk="1" data-value="5" data-source="/groups" data-title="Select group">Admin</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Select, error while loading</td>
-                                        <td><a href="#" id="status" data-type="select" data-pk="1" data-value="0" data-source="/status" data-title="Select status">Active</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Datepicker</td>
-                                        <td>
-                                            <a href="#" id="vacation" data-type="date" data-viewformat="dd.mm.yyyy" data-pk="1" data-placement="right" data-title="When you want vacation to start?">25.02.2013</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Combodate (date)</td>
-                                        <td>
-                                            <a href="#" id="dob" data-type="combodate" data-value="1984-05-15" data-format="YYYY-MM-DD" data-viewformat="DD/MM/YYYY" data-template="D / MMM / YYYY" data-pk="1" data-title="Select Date of birth"></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Combodate (datetime)</td>
-                                        <td>
-                                            <a href="#" id="event" data-type="combodate" data-template="D MMM YYYY  HH:mm" data-format="YYYY-MM-DD HH:mm" data-viewformat="MMM D, YYYY, HH:mm" data-pk="1" data-title="Setup event date and time"></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bootstrap Datetimepicker</td>
-                                        <td><a href="#" id="meeting_start" data-type="datetime" data-pk="1" data-url="/post" data-placement="right" title="Set date & time">15/03/2013 12:45</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Textarea, buttons below. Submit by <i>ctrl+enter</i>
-                                        </td>
-                                        <td><a href="#" id="comments" data-type="textarea" data-pk="1" data-placeholder="Your comments here..." data-title="Enter comments">awesome user!</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Checklist</td>
-                                        <td>
-                                            <a href="#" id="fruits" data-type="checklist" data-value="2,3" data-title="Select fruits"></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Select2 (tags mode)</td>
-                                        <td><a href="#" id="tags" data-type="select2" data-pk="1" data-title="Enter tags">html, javascript</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Select2 (dropdown mode)</td>
-                                        <td>
-                                            <a href="#" id="country" data-type="select2" data-pk="1" data-value="BS" data-title="Select country"></a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="panel-group adminpro-custon-design" id="accordion">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading accordion-head">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+									 Collapsible Group 1</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse1" class="panel-collapse panel-ic collapse in">
+                                        <div class="panel-body admin-panel-content animated bounce">
+                                            <p>It was popularised in the 1960s with the release of Letraset sheets of the containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions.</p>
+                                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua of Lorem Ipsum.</p>
+                                            <p> Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisis ut aliquip ex ea commodo consequat consectetur adipisicing elit.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading accordion-head">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+									 Collapsible Group 1</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse2" class="panel-collapse panel-ic collapse">
+                                        <div class="panel-body admin-panel-content animated bounce">
+                                            <p>It was popularised in the 1960s with the release of Letraset sheets of the containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions.</p>
+                                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua of Lorem Ipsum.</p>
+                                            <p> Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisis ut aliquip ex ea commodo consequat consectetur adipisicing elit.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading accordion-head">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+									 Collapsible Group 1</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse3" class="panel-collapse panel-ic collapse">
+                                        <div class="panel-body admin-panel-content animated bounce">
+                                            <p>It was popularised in the 1960s with the release of Letraset sheets of the containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions.</p>
+                                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua of Lorem Ipsum.</p>
+                                            <p> Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisis ut aliquip ex ea commodo consequat consectetur adipisicing elit.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="admin-pro-accordion-wrap">
+                            <div class="alert-title">
+                                <h2>Animate flash Accordion</h2>
+                                <p>These are the Custom bootstrap Animate flash Accordion style 2</p>
+                            </div>
+                            <div class="panel-group adminpro-custon-design" id="accordion2">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading accordion-head">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion2" href="#collapse4">
+									 Collapsible Group 2</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse4" class="panel-collapse panel-ic collapse in">
+                                        <div class="panel-body admin-panel-content animated flash">
+                                            <p>It was popularised in the 1960s with the release of Letraset sheets of the containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions.</p>
+                                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua of Lorem Ipsum.</p>
+                                            <p> Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisis ut aliquip ex ea commodo consequat consectetur adipisicing elit.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading accordion-head">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion2" href="#collapse5">
+									 Collapsible Group 2</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse5" class="panel-collapse panel-ic collapse">
+                                        <div class="panel-body admin-panel-content animated flash">
+                                            <p>It was popularised in the 1960s with the release of Letraset sheets of the containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions.</p>
+                                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua of Lorem Ipsum.</p>
+                                            <p> Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisis ut aliquip ex ea commodo consequat consectetur adipisicing elit.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading accordion-head">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion2" href="#collapse6">
+									 Collapsible Group 2</a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse6" class="panel-collapse panel-ic collapse">
+                                        <div class="panel-body admin-panel-content animated flash">
+                                            <p>It was popularised in the 1960s with the release of Letraset sheets of the containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions.</p>
+                                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua of Lorem Ipsum.</p>
+                                            <p> Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisis ut aliquip ex ea commodo consequat consectetur adipisicing elit.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- accordion End-->
         <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="footer-copy-right">
-                            <p>Copyright � 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
+                            <p>Copyright © 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
                         </div>
                     </div>
                 </div>
@@ -1064,27 +1029,9 @@
 		============================================ -->
     <script src="../js/metisMenu/metisMenu.min.js"></script>
     <script src="../js/metisMenu/metisMenu-active.js"></script>
-    <!-- morrisjs JS
-		============================================ -->
-    <script src="../js/sparkline/jquery.sparkline.min.js"></script>
-    <script src="../js/sparkline/jquery.charts-sparkline.js"></script>
-    <!-- calendar JS
-		============================================ -->
-    <script src="../js/calendar/moment.min.js"></script>
-    <script src="../js/calendar/fullcalendar.min.js"></script>
-    <script src="../js/calendar/fullcalendar-active.js"></script>
     <!-- tab JS
 		============================================ -->
     <script src="../js/tab.js"></script>
-    <!--  editable JS
-		============================================ -->
-    <script src="../js/editable/jquery.mockjax.js"></script>
-    <script src="../js/editable/mock-active.js"></script>
-    <script src="../js/editable/select2.js"></script>
-    <script src="../js/editable/moment.min.js"></script>
-    <script src="../js/editable/bootstrap-datetimepicker.js"></script>
-    <script src="../js/editable/bootstrap-editable.js"></script>
-    <script src="../js/editable/xediable-active.js"></script>
     <!-- plugins JS
 		============================================ -->
     <script src="../js/plugins.js"></script>

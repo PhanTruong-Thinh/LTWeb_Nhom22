@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>DAnh mục sản phẩm</title>
+    <title>Cập nhật tài khoản</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -66,6 +66,7 @@
 
 <body>
 
+
 <div class="left-sidebar-pro">
     <nav id="sidebar" class="">
         <div class="sidebar-header" style="height: 90px">
@@ -91,32 +92,32 @@
                     <li class="active">
                         <a class="has-arrow" href="index.html">
                             <i class="icon nalika-home icon-wrap"></i>
-                            <span class="mini-click-non">Tổng quan</span>
+                            <span class="mini-click-non">Ecommerce</span>
                         </a>
                         <ul class="submenu-angle" aria-expanded="true">
                             <li><a  href="index.html"><span class="mini-sub-pro">Bảng điều khiển</span></a></li>
                             <li><a  href="product-list.html"><span class="mini-sub-pro">Danh sách sản phẩm</span></a></li>
-                            <li><a  href="cart-list.html"><span class="mini-sub-pro">Danh sách đơn hàng</span></a></li>
+                            <li><a  href="product-list.html"><span class="mini-sub-pro">Danh sách đơn hàng</span></a></li>
                             <li><a  href="product-type.html"><span class="mini-sub-pro">Danh mục sản phẩm</span></a></li>
                             <li><a  href="analytics.html"><span class="mini-sub-pro">Phân tích</span></a></li>
                             <li><a  href="blog.html"><span class="mini-sub-pro">Tin tức</span></a></li>
                         </ul>
                     </li>
                     <li>
-                        <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Hộp thư</span></a>
+                        <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i
+                                class="fa big-icon fa-envelope icon-wrap"></i> <span
+                                class="mini-click-non">Hộp thư</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
-                            <li><a  href="mailbox.html"><span class="mini-sub-pro">Hôp thư đến</span></a></li>
+                            <li><a href="mailbox.html"><span class="mini-sub-pro">Hôp thư đến</span></a></li>
                             <li><a href="mailbox-view.html"><span class="mini-sub-pro">Xem thư</span></a></li>
-                            <li><a  href="mailbox-compose.html"><span class="mini-sub-pro">Soạn thư</span></a></li>
+                            <li><a href="mailbox-compose.html"><span class="mini-sub-pro">Soạn thư</span></a></li>
                         </ul>
                     </li>
                     <li>
                         <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa big-icon fa-users icon-wrap"></i> <span class="mini-click-non">Tài Khoản</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
-
-                            
                             <li><a  href="adminAccount.html"><span class="mini-sub-pro">Quản trị</span></a></li>
-                            <li><a  href="userAccount.html"><span class="mini-sub-pro">Người dùng</span></a></li>
+                            <li><a  href="userAccount.html"><span class="mini-sub-pro">NGười dùng</span></a></li>
                         </ul>
                     </li>
                     <li>
@@ -124,7 +125,6 @@
                         <ul class="submenu-angle" aria-expanded="false">
                             <li><a  href="buttons.html"><span class="mini-sub-pro">Tùy chỉnh nút</span></a></li>
                             <li><a  href="product-detail.html"><span class="mini-sub-pro">Giao diện sản phẩm</span></a></li>
-
                         </ul>
                     </li>
                 </ul>
@@ -424,16 +424,16 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="breadcomb-wp">
                                         <div class="breadcomb-icon">
-                                            <i class="icon nalika-home"></i>
+                                            <i class="icon nalika-user"></i>
                                         </div>
-                                        <div class="breadcomb-ctn">
-                                            <h2>Danh sách sản phẩm</h2>
+                                        <div class="breadcomb-ctn" style="margin-top: 13px">
+                                            <h2>Cập nhật tài khoản</h2>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                     <div class="breadcomb-report">
-                                        <button data-toggle="tooltip" data-placement="left" title="Tải xống" class="btn"><i class="icon nalika-download"></i></button>
+                                        <button data-toggle="tooltip" data-placement="left" title="Tải xuống" class="btn"><i class="icon nalika-download"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -443,109 +443,82 @@
             </div>
         </div>
     </div>
-    <div class="product-status mg-b-30">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="product-status-wrap">
-                        <h4>Danh sách sản phẩm</h4>
-                        <div class="add-product">
-                            <a href="product-edit.html">Thêm danh mục</a>
+    <!-- Single pro tab start-->
+    <div class="single-product-tab-area mg-b-30">
+        <!-- Single pro tab review Start-->
+        <div class="single-pro-review-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="review-tab-pro-inner">
+                            <ul id="myTab3" class="tab-review-design">
+                                <li class="active"><a href="#description"><i class="icon nalika-edit" aria-hidden="true"></i> Cập nhật</a></li>
+                            </ul>
+                            <div id="myTabContent" class="tab-content custom-product-edit">
+                                <div class="product-tab-list tab-pane fade active in" id="description">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="review-content-section">
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="icon nalika-user" aria-hidden="true"></i></span>
+                                                    <input type="text" class="form-control" placeholder="Tên">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="icon nalika-edit" aria-hidden="true"></i></span>
+                                                    <input type="text" class="form-control" placeholder="Mã Người dùng">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-eye" aria-hidden="true"></i></span>
+                                                    <input type="password" class="form-control" placeholder="Mật khẩu">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                                    <input type="text" class="form-control" placeholder="Email">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                                                    <input type="text" class="form-control" placeholder="Số điện thoại">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="review-content-section">
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="icon nalika-user" aria-hidden="true"></i></span>
+                                                    <input type="text" class="form-control" placeholder="Họ">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                    <input type="text" class="form-control" placeholder="Ngày tạo tài khoản">
+                                                </div>
+                                                <div class="input-group mg-b-pro-edt">
+                                                    <span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                                                    <input type="text" class="form-control" placeholder="Địa chỉ">
+                                                </div>
+
+                                                <select name="select" class="form-control pro-edt-select form-control-primary">
+                                                    <option value="opt1">- - - chọn - - -</option>
+                                                    <option value="opt2">Tài khoản thường</option>
+                                                    <option value="opt3">Tài khoản quản trị</option>
+                                                    <
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="text-center custom-pro-edt-ds">
+                                                <button type="button" class="btn btn-ctl-bt waves-effect waves-light m-r-10">Lưu
+                                                </button>
+                                                <button type="button" class="btn btn-ctl-bt waves-effect waves-light">Quay lại
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
-                        <table>
-                            <tr>
-                                <th>Mã danh mục</th>
-                                <th>Tên Tên danh mục</th>
-                                <th>Trạng thái</th>
-                                <th>Số lượng sản phẩm</th>
-                                <th>Cài đặt</th>
-                            </tr>
-                            <tr>
-                                <td>DM001</td>
-                                <td>Bảo mật</td>
-                                <td>
-                                    <button class="ps-setting">Sử dụng</button>
-                                </td>
-                                <td>10</td>
-                                <td>
-                                    <button data-toggle="tooltip" title="Edit" class="pd-setting-ed" ><a href="product-edit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></button>
-                                    <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>DM002</td>
-                                <td>Ofice</td>
-                                <td>
-                                    <button class="ps-setting">Sử dụng</button>
-                                </td>
-                                <td>10</td>
-                                <td>
-                                    <button data-toggle="tooltip" title="Edit" class="pd-setting-ed" ><a href="product-edit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></button>
-                                    <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>DM003</td>
-                                <td>Tiện ích</td>
-                                <td>
-                                    <button class="ps-setting">Sử dụng</button>
-                                </td>
-                                <td>10</td>
-                                <td>
-                                    <button data-toggle="tooltip" title="Edit" class="pd-setting-ed" ><a href="product-edit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></button>
-                                    <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>DM004</td>
-                                <td>Hệ điều hành</td>
-                                <td>
-                                    <button class="ps-setting">Sử dụng</button>
-                                </td>
-                                <td>10</td>
-                                <td>
-                                    <button data-toggle="tooltip" title="Edit" class="pd-setting-ed" ><a href="product-edit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></button>
-                                    <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>DM005</td>
-                                <td>Học tập</td>
-                                <td>
-                                    <button class="ps-setting">Sử dụng</button>
-                                </td>
-                                <td>10</td>
-
-                                <td>
-                                    <button data-toggle="tooltip" title="Edit" class="pd-setting-ed" ><a href="product-edit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></button>
-                                    <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>DM006</td>
-                                <td>Thiết kế</td>
-                                <td>
-                                    <button class="ps-setting">Sử dụng</button>
-                                </td>
-                                <td>10</td>
-
-                                <td>
-                                    <button data-toggle="tooltip" title="Edit" class="pd-setting-ed" ><a href="product-edit.html"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></button>
-                                    <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                </td>
-                            </tr>
-
-
-                        </table>
-<!--                        <div class="custom-pagination">-->
-<!--                            <ul class="pagination">-->
-<!--                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>-->
-<!--                                <li class="page-item"><a class="page-link" href="#">1</a></li>-->
-<!--                                <li class="page-item"><a class="page-link" href="#">2</a></li>-->
-<!--                                <li class="page-item"><a class="page-link" href="#">3</a></li>-->
-<!--                                <li class="page-item"><a class="page-link" href="#">Next</a></li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
                     </div>
                 </div>
             </div>
@@ -594,6 +567,9 @@
 <script src="js/calendar/moment.min.js"></script>
 <script src="js/calendar/fullcalendar.min.js"></script>
 <script src="js/calendar/fullcalendar-active.js"></script>
+<!-- tab JS
+    ============================================ -->
+<script src="js/tab.js"></script>
 <!-- plugins JS
     ============================================ -->
 <script src="js/plugins.js"></script>
