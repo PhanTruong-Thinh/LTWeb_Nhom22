@@ -111,11 +111,8 @@
                 <ul class="nav navbar-nav">
                     <li><a href="home.html">Trang chủ</a></li>
                     <li><a href="shop.html">Sản phẩm</a></li>
-                    <li><a href="single-product.html">Chi Tiết Sản Phẩm</a></li>
                     <li class="active"><a href="cart.html">Giỏ hàng</a></li>
                     <li><a href="checkout.html">Thanh toán</a></li>
-                    <li><a href="#">Loại</a></li>
-                    <li><a href="#">Khác</a></li>
                     <li><a href="#">Liên Hệ</a></li>
                 </ul>
             </div>
@@ -181,16 +178,7 @@
                     </div>
                 </div>
 
-                <div class="single-sidebar">
-                    <h2 class="sidebar-title">Bài đăng gần đây</h2>
-                    <ul>
-                        <li><a href="#">Final Cut Pro For Ipad</a></li>
-                        <li><a href="#">Auto Desk 3DS Max</a></li>
-                        <li><a href="#">Canva Pro</a></li>
-                        <li><a href="#">Microsoft Visio Professional 2019</a></li>
-                        <li><a href="#">Visual Studio Enterprise 2022</a></li>
-                    </ul>
-                </div>
+
             </div>
 
             <div class="col-md-8">
@@ -246,7 +234,10 @@
                                             <input type="submit" value="Xác nhận" name="apply_coupon" class="button">
                                         </div>
                                         <input type="submit" value="Cập nhật" name="update_cart" class="button">
-                                        <input type="submit" value="Thanh toán" name="proceed" class="checkout-button button alt wc-forward">
+
+
+                                            <input  type="submit" value="Thanh toán" name="proceed" onclick="window.location.href='checkout.html'; return false;" class="checkout-button button alt wc-forward">
+
                                     </td>
                                 </tr>
                                 </tbody>
@@ -307,7 +298,7 @@
 
 
                             <form method="post" action="#" class="shipping_calculator">
-                                <h2><a class="shipping-calculator-button" data-toggle="collapse" href="#calcalute-shipping-wrap" aria-expanded="false" aria-controls="calcalute-shipping-wrap">Tính phí Ship</a></h2>
+<!--                                <h2><a class="shipping-calculator-button" data-toggle="collapse" href="#calcalute-shipping-wrap" aria-expanded="false" aria-controls="calcalute-shipping-wrap">Tính phí Ship</a></h2>-->
 
                                 <section id="calcalute-shipping-wrap" class="shipping-calculator-form collapse">
 
