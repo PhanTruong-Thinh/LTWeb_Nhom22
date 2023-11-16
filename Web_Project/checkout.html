@@ -83,13 +83,13 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="logo">
-                    <h1><a href="./"><img src="img/logo.png"></a></h1>
+                    <h1><a href="home.html"><img src="admin/img/logo/logo.png"></a></h1>
                 </div>
             </div>
 
             <div class="col-sm-6">
                 <div class="shopping-item">
-                    <a href="cart.html">Giỏ hàng - <span class="cart-amunt">1.000.000đ</span> <i class="fa fa-shopping-cart"></i></a>
+                    <a href="cart.html">Giỏ hàng - <span class="cart-amunt">1.000.000&#x20AB</span> <i class="fa fa-shopping-cart"></i></a>
                 </div>
             </div>
         </div>
@@ -112,9 +112,14 @@
                     <li><a href="home.html">Trang chủ</a></li>
                     <li><a href="shop.html">Sản phẩm</a></li>
                     <li><a href="cart.html">Giỏ hàng</a></li>
-                    <li class="active"><a href="checkout.html">Thanh toán</a></li>
                     <li><a href="#">Liên Hệ</a></li>
                 </ul>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Tìm kiếm...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
             </div>
         </div>
     </div>
@@ -138,39 +143,33 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <div class="single-sidebar">
-                    <h2 class="sidebar-title">Tìm kiếm sản phẩm</h2>
-                    <form action="">
-                        <input type="text" placeholder="Tìm sản phẩm...">
-                        <input type="submit" value="Tìm">
-                    </form>
-                </div>
+
 
                 <div class="single-sidebar">
                     <h2 class="sidebar-title">Sản phẩm</h2>
                     <div class="thubmnail-recent">
-                        <img src="img/product-thumb-8.png" class="recent-thumb" alt="">
+                        <img src="img/VPN_1/nordvpn.png" class="recent-thumb" alt="">
                         <h2><a href="single-product.html">NordVPN</a></h2>
                         <div class="product-sidebar-price">
                             <ins>390.000đ</ins> <del>490.000đ</del>
                         </div>
                     </div>
                     <div class="thubmnail-recent">
-                        <img src="img/product-thumb-9.png" class="recent-thumb" alt="">
+                        <img src="img/VPN_1/Hotspot-VPN-1nam.png" class="recent-thumb" alt="">
                         <h2><a href="single-product.html">Hotspot Shield VPN</a></h2>
                         <div class="product-sidebar-price">
                             <ins>349.000đ</ins> <del>2.240.000đ</del>
                         </div>
                     </div>
                     <div class="thubmnail-recent">
-                        <img src="img/product-thumb-10.png" class="recent-thumb" alt="">
+                        <img src="img/VPN_1/expressvpn.png" class="recent-thumb" alt="">
                         <h2><a href="single-product.html">ExpressVPN</a></h2>
                         <div class="product-sidebar-price">
                             <ins>149.000đ</ins> <del>307.000đ</del>
                         </div>
                     </div>
                     <div class="thubmnail-recent">
-                        <img src="img/product-thumb-11.png" class="recent-thumb" alt="">
+                        <img src="img/VPN_1/avira-vpn-3-thang.png" class="recent-thumb" alt="">
                         <h2><a href="single-product.html">Avira Phantom VPN Pro</a></h2>
                         <div class="product-sidebar-price">
                             <ins>249.000đ</ins> <del>357.000đ</del>
@@ -225,8 +224,7 @@
                             <div class="clear"></div>
                         </form>
 
-                        <div class="woocommerce-info">Có mã giảm giá?
-                        </div>
+
                             <p class="form-row form-row-first">
                                 <input type="text" value="" id="coupon_code" placeholder="Mã giảm giá" class="input-text" name="coupon_code">
                             </p>
@@ -348,7 +346,7 @@
 
                             </div>
 
-                            <h3 id="order_review_heading">Order của bạn</h3>
+                            <h3 id="order_review_heading">Đơn hàng của bạn</h3>
 
                             <div id="order_review" style="position: relative;">
                                 <table class="shop_table">
@@ -361,16 +359,16 @@
                                     <tbody>
                                     <tr class="cart_item">
                                         <td class="product-name">
-                                            Ship Your Idea <strong class="product-quantity">× 1</strong> </td>
+                                             <strong class="product-quantity">× 1</strong> </td>
                                         <td class="product-total">
-                                            <span class="amount">£15.00</span> </td>
+                                            <span class="amount">15.000&#x20AB</span> </td>
                                     </tr>
                                     </tbody>
                                     <tfoot>
 
                                     <tr class="cart-subtotal">
                                         <th>Giảm giá</th>
-                                        <td><span class="amount">£15.00</span>
+                                        <td><span class="amount">15.000&#x20AB</span>
                                         </td>
                                     </tr>
 
@@ -385,8 +383,8 @@
 
 
                                     <tr class="order-total">
-                                        <th>Tổng order</th>
-                                        <td><strong><span class="amount">£15.00</span></strong> </td>
+                                        <th>Tổng cộng</th>
+                                        <td><strong><span class="amount">15.000&#x20AB</span></strong> </td>
                                     </tr>
 
                                     </tfoot>
@@ -421,7 +419,7 @@
 
                                     <div class="form-row place-order">
 
-                                        <input type="submit" data-value="Place order" value="Nơi đặt hàng" id="place_order" name="woocommerce_checkout_place_order" class="button alt">
+                                        <input type="submit" data-value="Place order" value="đặt hàng" id="place_order" name="woocommerce_checkout_place_order" class="button alt">
 
 
                                     </div>
@@ -446,7 +444,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-6">
                 <div class="footer-about-us">
-                    <h2>u<span>Stora</span></h2>
+                    <h2><span>TPT</span></h2>
                     <p>Cảm ơn đã tin tưởng và sử dụng sản phẩm của chúng tôi.</p>
                     <div class="footer-social">
                         <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
@@ -461,18 +459,18 @@
                 <div class="footer-menu">
                     <h2 class="footer-wid-title">Thông tin</h2>
                     <ul>
-                        <li><a href="#">Tài khoản </a></li>
-                        <li><a href="#">Lịch sử đặt hàng</a></li>
-                        <li><a href="#">Danh sách mong muốn</a></li>
+                        <li><a href="#">Chính sách giao hàng  </a></li>
+                        <li><a href="#">Điều khoản và điêù kiện</a></li>
+                        <li><a href="#">Chính sách bảo hành</a></li>
                         <li><a href="#">Liên hệ với chúng tôi</a></li>
-                        <li><a href="#">Trang chủ</a></li>
+                        <li><a href="#">Mua hàng và thanh toán online</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="col-md-3 col-sm-6">
                 <div class="footer-menu">
-                    <h2 class="footer-wid-title">Danh mục sa phẩm</h2>
+                    <h2 class="footer-wid-title">Danh mục sản phẩm</h2>
                     <ul>
                         <li><a href="#">Window</a></li>
                         <li><a href="#">Office</a></li>
@@ -504,7 +502,7 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="copyright">
-                    <p> © Thương mại điện tử 2015. Đã đăng ký Bản quyền. <a href="http://www.freshdesignweb.com" target="_blank">freshDesignweb.com</a></p>
+                    <p> © Thương mại điện tử 2023. Đã đăng ký Bản quyền. <a href="http://www.freshdesignweb.com" target="_blank"></a></p>
                 </div>
             </div>
 

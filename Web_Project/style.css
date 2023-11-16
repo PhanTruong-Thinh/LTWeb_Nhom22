@@ -92,6 +92,10 @@ z-index: 999;}
 .logo h1 a span {
     color: #5a88ca;
 }
+.logo h1 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
 .shopping-item {
     border: 1px solid #ddd;
     float: right;
@@ -147,8 +151,19 @@ z-index: 999;}
     padding: 20px;
 }
 
-.mainmenu-area ul.navbar-nav li:hover a, .mainmenu-area ul.navbar-nav li.active a {background: #5a88ca; color:#FFF;}
+.mainmenu-area ul.navbar-nav li:hover a, .mainmenu-area ul.navbar-nav li.active a {background: #5a88ca; color:#FFF;justify-content: space-between}
 .mainmenu-area .nav > li > a:focus {color: #FFF;}
+
+
+.input-group input,
+.input-group button {
+    height: 40px; /* Điều chỉnh chiều cao mong muốn */
+}
+.input-group {
+    margin-top: 10px;
+}
+
+
 
 .slider-area { width:80%; position:relative; margin:0 auto; padding:5px;}
 /*-------------------------
@@ -376,13 +391,15 @@ z-index: 999;}
 
 .product-f-image {
     position: relative;
+    height: auto;
+    width: 200px;
 }
 .product-hover {
     height: 100%;
     left: 0;
     position: absolute;
     top: 0;
-    width: 100%;overflow: hidden;border: 1px solid #ddd;
+    width: 100%;overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.5);;
 }
 .product-hover:after {
   background: none repeat scroll 0 0 #000;
@@ -444,8 +461,8 @@ z-index: 999;}
   overflow: hidden;
 }
 .single-product:hover {}
-.single-product:hover .product-hover a.add-to-cart-link {top: 32%;}
-.single-product:hover .product-hover a.view-details-link {bottom: 32%;}
+.single-product:hover .product-hover a.add-to-cart-link {top: 20%;}
+.single-product:hover .product-hover a.view-details-link {bottom: 20%;}
 .single-product:hover .product-hover:after{left: 0}
 
 
@@ -1124,4 +1141,8 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 
 .h2-product {
     height: 44px;
+}
+.home_new_product {
+    height: auto;
+    width: 200px;
 }
