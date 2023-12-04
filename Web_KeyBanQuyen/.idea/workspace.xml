@@ -10,14 +10,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="321359e7-ee8d-49c9-8037-62d9be0aee7a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/LTWeb_Nhom22.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/LTWeb_Nhom22.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/bean/UserAdmin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/dao/AdminDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/model/UserAdmin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/AdminControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/UserAdminService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/DB.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/indexAdmin.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/loginAdmin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/db/DBProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/db/DBProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/db/JDBIConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/db/JDBIConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/Helloservlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Jsp File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -41,8 +64,9 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Thinh",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "F:/Lab/Project/LTWeb_Nhom22/Web_KeyBanQuyen",
     "node.js.detected.package.eslint": "true",
@@ -57,7 +81,20 @@
       <recent name="F:\Lab\Demo\maven\Web_KeyBanQuyen\src\main\webapp" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.82">
+    <configuration name="UserAdminService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="vn.edu.hcmuaf.service.UserAdminService" />
+      <module name="Web_KeyBanQuyen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="vn.edu.hcmuaf.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 9.0.82" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.82" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -146,6 +183,11 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.UserAdminService" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -158,6 +200,8 @@
       <workItem from="1700411205467" duration="497000" />
       <workItem from="1700753855725" duration="54000" />
       <workItem from="1700753997264" duration="628000" />
+      <workItem from="1700921183881" duration="110000" />
+      <workItem from="1701703500207" duration="6716000" />
     </task>
     <servers />
   </component>
