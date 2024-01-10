@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Web_KeyBanQuyen:war" />
+      <artifact name="Web_KeyBanQuyen:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,24 +10,119 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="321359e7-ee8d-49c9-8037-62d9be0aee7a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/bean/UserAdmin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/dao/AdminDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/model/UserAdmin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/AdminControl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/UserAdminService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/DB.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/indexAdmin.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/loginAdmin.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/dao/DirectorysDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/dao/ProductsDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/model/Directorys.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/model/Products.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/ProductManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/ManagerProduct.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/log.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/db/DBProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/db/DBProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/db/JDBIConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/db/JDBIConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/Helloservlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/AdminControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/AdminControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/account-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/account-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/adminAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/adminAccount.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/analytics.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/analytics.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/blog-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/blog-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/buttons.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/buttons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/cart-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/cart-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/indexAdmin.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/loginAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/loginAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/accordion.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/accordion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/advance-form-element.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/advance-form-element.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/alerts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/alerts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/area-charts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/area-charts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/bar-charts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/bar-charts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/basic-form-element.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/basic-form-element.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/blog-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/blog-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/buttons.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/buttons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/c3.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/c3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/code-editor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/code-editor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/data-maps.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/data-maps.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/data-table.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/data-table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/dual-list-box.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/dual-list-box.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/file-manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/file-manager.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/google-map.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/google-map.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/images-cropper.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/images-cropper.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/index-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/line-charts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/line-charts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/modals.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/modals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/notifications.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/notifications.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/password-meter.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/password-meter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/pdf-viewer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/pdf-viewer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/peity.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/peity.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/preloader.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/preloader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/product-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/product-detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/rounded-chart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/rounded-chart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/sparkline.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/sparkline.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/static-table.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/static-table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/tabs.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/tabs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/tree-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/tree-view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/not use file/widgets.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/not use file/widgets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/password-recovery.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/password-recovery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/product-cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/product-cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/product-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/product-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/product-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/product-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/product-payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/product-payment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/product-type.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/product-type.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/userAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/userAccount.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/account-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/account-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/adminAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/adminAccount.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/analytics.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/analytics.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/blog-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/blog-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/buttons.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/buttons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/cart-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/cart-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/accordion.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/accordion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/advance-form-element.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/advance-form-element.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/alerts.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/alerts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/area-charts.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/area-charts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/bar-charts.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/bar-charts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/basic-form-element.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/basic-form-element.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/blog-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/blog-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/buttons.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/buttons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/c3.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/c3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/code-editor.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/code-editor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/data-maps.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/data-maps.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/data-table.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/data-table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/dual-list-box.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/dual-list-box.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/file-manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/file-manager.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/google-map.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/google-map.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/images-cropper.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/images-cropper.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/index-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/line-charts.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/line-charts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/modals.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/modals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/notifications.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/notifications.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/password-meter.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/password-meter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/pdf-viewer.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/pdf-viewer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/peity.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/peity.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/preloader.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/preloader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/product-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/product-detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/rounded-chart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/rounded-chart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/sparkline.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/sparkline.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/static-table.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/static-table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/tabs.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/tabs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/tree-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/tree-view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/widgets.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/not use file/widgets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/password-recovery.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/password-recovery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/product-cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/product-cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/product-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/product-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/product-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/product-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/product-payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/product-payment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/product-type.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/userAccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/admin/userAccount.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +132,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -60,34 +155,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Thinh",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "F:/Lab/Project/LTWeb_Nhom22/Web_KeyBanQuyen",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Thinh&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/DW_2023_T5_Nhom13/Thinh_Staging&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Lab\Demo\maven\Web_KeyBanQuyen\src\main\webapp" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.82">
-    <configuration name="UserAdminService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="vn.edu.hcmuaf.service.UserAdminService" />
+  <component name="RunManager" selected="Tomcat Server.Tomcat ">
+    <configuration name="ProductsDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="vn.edu.hcmuaf.dao.ProductsDao" />
       <module name="Web_KeyBanQuyen" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="vn.edu.hcmuaf.service.*" />
+          <option name="PATTERN" value="vn.edu.hcmuaf.dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -95,18 +190,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 9.0.82" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.82" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat " type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat " ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="Web_KeyBanQuyen:war">
+        <artifact name="Web_KeyBanQuyen:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/Web_KeyBanQuyen_war" />
+            <option name="CONTEXT_PATH" value="/Web_KeyBanQuyen_war_exploded" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="dbc55a97-8b2f-4dfc-9599-6e6134d2ebab" />
-        <option name="HTTP_PORT" value="13560" />
+        <option name="BASE_DIRECTORY_NAME" value="dd7909e5-4e55-4e4d-bd82-9e697b7f84d3" />
+        <option name="HTTP_PORT" value="8081" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -114,7 +209,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="50935" />
+        <option name="DEBUG_PORT" value="51158" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -179,13 +274,17 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Web_KeyBanQuyen:war" />
+          <artifact name="Web_KeyBanQuyen:war exploded" />
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.ProductsDao" />
+      <item itemvalue="Tomcat Server.Tomcat " />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UserAdminService" />
+        <item itemvalue="Application.ProductsDao" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +300,14 @@
       <workItem from="1700753855725" duration="54000" />
       <workItem from="1700753997264" duration="628000" />
       <workItem from="1700921183881" duration="110000" />
-      <workItem from="1701703500207" duration="6716000" />
+      <workItem from="1701703500207" duration="7012000" />
+      <workItem from="1701710723789" duration="994000" />
+      <workItem from="1702018583081" duration="13000" />
+      <workItem from="1702378645595" duration="1571000" />
+      <workItem from="1702827439544" duration="5170000" />
+      <workItem from="1703089760712" duration="38000" />
+      <workItem from="1704809671025" duration="6709000" />
+      <workItem from="1704904671690" duration="3981000" />
     </task>
     <servers />
   </component>
