@@ -1270,7 +1270,7 @@ ul.two-part-sp li{
     color: #fff;
     padding: 5px 15px;
     font-size: 15px;
-    background: #2eb7f3;
+    background: #24caa1;
     border-radius: 3px;
 }
 .product-status-wrap .ds-setting {
@@ -1280,6 +1280,15 @@ ul.two-part-sp li{
     font-size: 15px;
     background: #eb4b4b;
     border-radius: 3px;
+}
+
+.product-status-wrap .ys-setting {
+	border: none;
+	color: #fff;
+	padding: 5px 15px;
+	font-size: 15px;
+	background: #ffff00;
+	border-radius: 3px;
 }
 .sales-report-stn-his button.product-btn-history, button.pd-setting-ed {
     padding: 5px 10px;

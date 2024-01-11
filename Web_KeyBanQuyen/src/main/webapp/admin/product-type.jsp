@@ -114,9 +114,9 @@
                         </a>
                         <ul class="submenu-angle" aria-expanded="true">
                             <li><a  href="index.jsp"><span class="mini-sub-pro">Bảng điều khiển</span></a></li>
-                            <li><a  href="product-list.html"><span class="mini-sub-pro">Danh sách sản phẩm</span></a></li>
+                            <li><a  href="ManagerProduct.jsp"><span class="mini-sub-pro">Danh sách sản phẩm</span></a></li>
                             <li><a  href="cart-list.html"><span class="mini-sub-pro">Danh sách đơn hàng</span></a></li>
-                            <li><a  href="product-type.html"><span class="mini-sub-pro">Danh mục sản phẩm</span></a></li>
+                            <li><a  href="product-type.jsp"><span class="mini-sub-pro">Danh mục sản phẩm</span></a></li>
                             <li><a  href="analytics.html"><span class="mini-sub-pro">Phân tích</span></a></li>
                             <li><a  href="blog.html"><span class="mini-sub-pro">Tin tức</span></a></li>
                         </ul>
@@ -127,8 +127,8 @@
                         <ul class="submenu-angle" aria-expanded="false">
 
                             
-                            <li><a  href="adminAccount.html"><span class="mini-sub-pro">Quản trị</span></a></li>
-                            <li><a  href="userAccount.html"><span class="mini-sub-pro">Người dùng</span></a></li>
+                            <li><a  href="adminAccount.jsp"><span class="mini-sub-pro">Quản trị</span></a></li>
+                            <li><a  href="userAccount.jsp"><span class="mini-sub-pro">Người dùng</span></a></li>
                         </ul>
                     </li>
 
@@ -467,7 +467,7 @@
                             </tr>
                             <%
                                 for(Directorys directorys: directorysList){
-                                String coler = directorys.getStatus().equals("Ẩn")? "ds-setting" : "ps-setting";
+                                String coler = directorys.getStatus().equals("Ẩn")? "ys-setting" : "ps-setting";
                             %>
                             <tr>
                                 <td><%=directorys.getId()%></td>
