@@ -32,6 +32,25 @@
       <version>8.2.0</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.32</version> <!-- Hoặc phiên bản mới nhất -->
+
+      <!-- Nếu bạn sử dụng Logback -->
+      <scope>compile</scope>
+    </dependency>
+
+    <!-- Logback -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.4.8</version> <!-- Hoặc phiên bản mới nhất -->
+
+      <!-- Nếu bạn sử dụng Logback -->
+      <scope>compile</scope>
+    </dependency>
+
   </dependencies>
   <build>
     <finalName>Web_KeyBanQuyen</finalName>

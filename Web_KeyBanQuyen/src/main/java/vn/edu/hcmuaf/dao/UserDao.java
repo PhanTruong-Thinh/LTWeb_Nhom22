@@ -2,7 +2,7 @@ package vn.edu.hcmuaf.dao;
 
 import org.jdbi.v3.core.Handle;
 import org.jdbi.v3.core.statement.Query;
-import vn.edu.hcmuaf.bean.UserAdmin;
+
 import vn.edu.hcmuaf.db.JDBIConnector;
 import vn.edu.hcmuaf.model.Products;
 import vn.edu.hcmuaf.model.User;

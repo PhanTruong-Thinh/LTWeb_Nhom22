@@ -1,6 +1,11 @@
 <%@ page import="java.util.List" %>
 <%@ page import="vn.edu.hcmuaf.dao.ProductsDao" %>
-<%@ page import="vn.edu.hcmuaf.model.Products" %><%--
+<%@ page import="vn.edu.hcmuaf.model.Products" %>
+<%@ page import="vn.edu.hcmuaf.model.Directorys" %>
+<%@ page import="vn.edu.hcmuaf.dao.DirectorysDao" %>
+<%@ page import="vn.edu.hcmuaf.model.Status" %>
+<%@ page import="vn.edu.hcmuaf.dao.StatusDao" %>
+<%@ page import="vn.edu.hcmuaf.dao.KhoDao" %><%--
   Created by IntelliJ IDEA.
   User: THINH
   Date: 1/9/2024
@@ -72,10 +77,20 @@
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-<%
-    List<Products> productsDaoList = ProductsDao.getProductAdmin();
-%>
+
+<form action="./ProductManager" method="post">
+    <%
+            String cate = "all";
+            List<Products> productsDaoList = ProductsDao.getProductAdmin();
+        List<Directorys> directorys = DirectorysDao.getDirectorysAdmin();
+        String text = (String) request.getAttribute("caterogy");
+        if ( text!=null && !text.equals(cate)){
+            cate = DirectorysDao.getName(text);
+            productsDaoList = (List<Products>) request.getAttribute("listProduct");
+        }
+    %>
 <div class="left-sidebar-pro">
+
     <nav id="sidebar" class="">
         <div class="sidebar-header" style="height: 90px">
             <a href="index.jsp"><img class="main-logo" src="img/logo/logo.png" alt=""/></a>
@@ -157,7 +172,7 @@
                                     <div class="header-top-menu tabl-d-n">
                                         <div class="breadcome-heading">
                                             <form role="search" class="">
-                                                <input type="text" placeholder="Tìm kiếm..." class="form-control">
+                                                <input type="text" placeholder="Tìm kiếm..." class="form-control" style="color: white">
                                                 <a href=""><i class="fa fa-search"></i></a>
                                             </form>
                                         </div>
@@ -472,7 +487,7 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcomb-wp">
-                                            <div class="breadcomb-icon">
+                                            <div class="breadcomb-icon" style="margin-right: 30px">
                                                 <i class="icon nalika-home"></i>
                                             </div>
                                             <div class="breadcomb-ctn" style="margin-top: 13px">
@@ -498,13 +513,27 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
-                            <h4>Danh sách sản phẩm</h4>
+                            <h4 style="float: left">Danh sách sản phẩm</h4>
+                            <button type="submit" style="float: right; margin-right: 150px;  margin-top: 1px; width: 50px; height: 30px;border-radius: 5px">lọc</button>
+                            <select name="select" style="float: right;border-radius: 5px; margin-right: 10px; margin-top: 1px; width: 200px; height: 30px ">
+
+                               <option ><%=cate%></option>
+                                <option value="all">all</option>
+                                <%
+                                        for (Directorys dir :directorys ){
+                                %>
+                                <option value="<%=dir.getId()%>"><%=dir.getName()%></option>
+                                <%}%>
+                            </select>
+
                             <div class="add-product">
-                                <a href="product-edit.html">Thêm sản phẩm</a>
+
+                                <a href="addproduct.jsp">Thêm sản phẩm</a>
                             </div>
                             <table>
                                 <tr>
                                     <th>Ảnh</th>
+                                    <th>Mã sản phẩm</th>
                                     <th>Tên sản phẩm</th>
                                     <th>Trạng thái</th>
                                     <th>Số lượng</th>
@@ -512,136 +541,58 @@
                                     <th>Giá bán(VND)</th>
                                     <th>Cài đặt</th>
                                 </tr>
-                                <% for (Products product: productsDaoList) {%>
+                                <% for (Products product: productsDaoList) {
+                                    String id = product.getMaSP();%>
 
                                 <tr>
                                     <td><img src="<%=product.getUrl()%>" alt=""/></td>
+                                    <td ><%=product.getMaSP()%></td>
                                     <td><%=product.getName()%></td>
+                                    <%
+                                        if (product.getStatus().equals("Đang kinh doanh")){%>
                                     <td>
                                         <button class="pd-setting"><%= product.getStatus()%></button>
                                     </td>
-                                    <td><%=product.getNumber()%></td>
-                                    <td><%=product.getTinhTrang()%></td>
+                                    <% }else {%>
+                                    <td>
+                                        <button class="ds-setting"><%= product.getStatus()%></button>
+                                    </td>
+                                    <%}%>
+
+                                    <td><%=KhoDao.getNumberProduct(product.getMaSP())%></td>
+                                    <td><%=StatusDao.getName(product.getTinhTrang())%></td>
                                     <td class="large-column no-scientific-notation no-wrap" style="white-space: nowrap; width: 300px"><%=product.getPrice()%></td>
                                     <td>
-                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><a
-                                                href="product-edit.html"><i class="fa fa-pencil-square-o"
-                                                                            aria-hidden="true"></i></a></button>
-                                        <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i
-                                                class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                        <form action="./ProductDetail" method="post" style="float: left">
+                                            <input type="hidden" name="productId" value="<%=product.getMaSP()%>">
+                                            <button data-toggle="tooltip" title="submit" class="pd-setting-ed"><a
+                                                    href="product-edit.jsp?id=<%=id%>"><i class="fa fa-pencil-square-o"
+                                                                               aria-hidden="true"></i></a></button>
+                                        </form>
+                                            <form action="./RemoveProduct" method="post" style="float: right">
+                                                <input name="idPr" value="<%=product.getMaSP()%>" style="display: none">
+                                                <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i
+                                                        class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                            </form>
+
+
+
                                     </td>
                                 </tr>
 
                               <% } %>
-<%--                                <tr>--%>
-<%--                                    <td><img src="#" alt=""/></td>--%>
-<%--                                    <td>Windows 10 Home</td>--%>
-<%--                                    <td>--%>
-<%--                                        <button class="ps-setting">Tạm ngừng</button>--%>
-<%--                                    </td>--%>
-<%--                                    <td>60</td>--%>
-<%--                                    <td>1.020.000</td>--%>
-<%--                                    <td>Còn hàng</td>--%>
-<%--                                    <td>17.000</td>--%>
-<%--                                    <td>--%>
-<%--                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><a--%>
-<%--                                                href="product-edit.html"><i class="fa fa-pencil-square-o"--%>
-<%--                                                                            aria-hidden="true"></i></a></button>--%>
-<%--                                        <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i--%>
-<%--                                                class="fa fa-trash-o" aria-hidden="true"></i></button>--%>
-<%--                                    </td>--%>
-<%--                                </tr>--%>
-<%--                                <tr>--%>
-<%--                                    <td><img src="#" alt=""/></td>--%>
-<%--                                    <td>Windows 11 Pro</td>--%>
-<%--                                    <td>--%>
-<%--                                        <button class="ds-setting">Ngừng kinh doanh</button>--%>
-<%--                                    </td>--%>
-<%--                                    <td>70</td>--%>
-<%--                                    <td>1.050.000</td>--%>
-<%--                                    <td>Còn hàng</td>--%>
-<%--                                    <td>15.000</td>--%>
-<%--                                    <td>--%>
-<%--                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><a--%>
-<%--                                                href="product-edit.html"><i class="fa fa-pencil-square-o"--%>
-<%--                                                                            aria-hidden="true"></i></a></button>--%>
-<%--                                        <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i--%>
-<%--                                                class="fa fa-trash-o" aria-hidden="true"></i></button>--%>
-<%--                                    </td>--%>
-<%--                                </tr>--%>
-<%--                                <tr>--%>
-<%--                                    <td><img src="#" alt=""/></td>--%>
-<%--                                    <td>Windows 11 Home</td>--%>
-<%--                                    <td>--%>
-<%--                                        <button class="pd-setting">Đang bán</button>--%>
-<%--                                    </td>--%>
-<%--                                    <td>120</td>--%>
-<%--                                    <td>1.440.000</td>--%>
-<%--                                    <td>Còn hàng</td>--%>
-<%--                                    <td>12.000</td>--%>
-<%--                                    <td>--%>
-<%--                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><a--%>
-<%--                                                href="product-edit.html"><i class="fa fa-pencil-square-o"--%>
-<%--                                                                            aria-hidden="true"></i></a></button>--%>
-<%--                                        <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i--%>
-<%--                                                class="fa fa-trash-o" aria-hidden="true"></i></button>--%>
-<%--                                    </td>--%>
-<%--                                </tr>--%>
-<%--                                <tr>--%>
-<%--                                    <td><img src="#" alt=""/></td>--%>
-<%--                                    <td>Windows Server 2012</td>--%>
-<%--                                    <td>--%>
-<%--                                        <button class="pd-setting">Đang bán</button>--%>
-<%--                                    </td>--%>
-<%--                                    <td>30</td>--%>
-<%--                                    <td>540.000</td>--%>
-<%--                                    <td>Còn hàng</td>--%>
-<%--                                    <td>18.000</td>--%>
-<%--                                    <td>--%>
-<%--                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><a--%>
-<%--                                                href="product-edit.html"><i class="fa fa-pencil-square-o"--%>
-<%--                                                                            aria-hidden="true"></i></a></button>--%>
-<%--                                        <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i--%>
-<%--                                                class="fa fa-trash-o" aria-hidden="true"></i></button>--%>
-<%--                                    </td>--%>
-<%--                                </tr>--%>
-<%--                                <tr>--%>
-<%--                                    <td><img src="#" alt=""/></td>--%>
-<%--                                    <td>Windows Server 2019</td>--%>
-<%--                                    <td>--%>
-<%--                                        <button class="ps-setting">Tạm ngừng</button>--%>
-<%--                                    </td>--%>
-<%--                                    <td>400</td>--%>
-<%--                                    <td>4.000.000</td>--%>
-<%--                                    <td>Còn hàng</td>--%>
-<%--                                    <td>10.000</td>--%>
-<%--                                    <td>--%>
-<%--                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><a--%>
-<%--                                                href="product-edit.html"><i class="fa fa-pencil-square-o"--%>
-<%--                                                                            aria-hidden="true"></i></a></button>--%>
-<%--                                        <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i--%>
-<%--                                                class="fa fa-trash-o" aria-hidden="true"></i></button>--%>
-<%--                                    </td>--%>
-<%--                                </tr>--%>
-
 
                             </table>
-                            <!--                            <div class="custom-pagination">-->
-                            <!--								<ul class="pagination">-->
-                            <!--									<li class="page-item"><a class="page-link" href="#">Previous</a></li>-->
-                            <!--									<li class="page-item"><a class="page-link" href="#">1</a></li>-->
-                            <!--									<li class="page-item"><a class="page-link" href="#">2</a></li>-->
-                            <!--									<li class="page-item"><a class="page-link" href="#">3</a></li>-->
-                            <!--									<li class="page-item"><a class="page-link" href="#">Next</a></li>-->
-                            <!--								</ul>-->
-                            <!--                            </div>-->
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
+</form>
 
 <!-- jquery
     ============================================ -->

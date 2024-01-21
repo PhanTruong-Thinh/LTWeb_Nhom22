@@ -25,14 +25,23 @@ public class Products {
     public Products() {
     }
 
-    public Products(String url, String name, String status, int number, String tinhTrang, double price){
+    public Products(String url,String id, String name, String status, int number, String tinhTrang, double price){
         this.url = url;
+        this.maSP = id;
         this.name = name;
         this.status = status;
         this.number = number;
         this.tinhTrang = tinhTrang;
         this.price = price;
     }
+    public Products(String url,String id, String name, String status, double price){
+        this.url = url;
+        this.maSP = id;
+        this.name = name;
+        this.status = status;
+        this.price = price;
+    }
+
 
     public Products(String maSP, String maDM, String name, String typeProduct, String moTa, double price, String version, String hangSX, String url, String hangDung, String baoHanh, Date create, int number, int numberUser, String status, String tinhTrang) {
         this.maSP = maSP;
@@ -51,6 +60,23 @@ public class Products {
         this.numberUser = numberUser;
         this.status = status;
         this.tinhTrang = tinhTrang;
+    }
+    public Products(String maSP, String maDM, String name, String typeProduct, String moTa, double price, String version, String hangSX, String url, String hangDung, String baoHanh, Date create, int numberUser, String status) {
+        this.maSP = maSP;
+        this.maDM = maDM;
+        this.name = name;
+        this.typeProduct = typeProduct;
+        this.moTa = moTa;
+        this.price = price;
+        this.version = version;
+        this.hangSX = hangSX;
+        this.url = url;
+        this.hangDung = hangDung;
+        this.baoHanh = baoHanh;
+        this.create = create;
+        this.numberUser = numberUser;
+        this.status = status;
+
     }
 
     public String getMaSP() {

@@ -1,6 +1,5 @@
 package vn.edu.hcmuaf.service;
 
-import vn.edu.hcmuaf.bean.UserAdmin;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

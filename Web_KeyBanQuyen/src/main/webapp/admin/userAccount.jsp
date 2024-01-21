@@ -440,7 +440,7 @@
                     <div class="product-status-wrap">
                         <h4>Tài khoản người dùng</h4>
                         <div class="add-product">
-                            <a href="product-edit.html">Thêm Tài khoản</a>
+                            <a href="product-edit.jsp">Thêm Tài khoản</a>
                         </div>
                         <table>
                             <tr>

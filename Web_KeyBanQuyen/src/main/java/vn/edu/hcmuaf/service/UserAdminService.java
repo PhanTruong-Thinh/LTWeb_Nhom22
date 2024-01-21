@@ -1,6 +1,6 @@
 package vn.edu.hcmuaf.service;
 
-import vn.edu.hcmuaf.bean.UserAdmin;
+
 import vn.edu.hcmuaf.dao.UserDao;
 import vn.edu.hcmuaf.db.JDBIConnector;
 
