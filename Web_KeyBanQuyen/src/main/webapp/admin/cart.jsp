@@ -1,4 +1,10 @@
-<!doctype html>
+<%@ page import="java.util.List" %>
+<%@ page import="vn.edu.hcmuaf.model.Oders" %>
+<%@ page import="vn.edu.hcmuaf.dao.OdersDao" %>
+<%@ page import="vn.edu.hcmuaf.dao.UserDao" %>
+<%@ page import="vn.edu.hcmuaf.dao.StatusDao" %>
+<%@ page import="vn.edu.hcmuaf.model.Products" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html class="no-js" lang="en">
 
 <head>
@@ -65,6 +71,12 @@
 </head>
 
 <body>
+
+<%
+    List<Oders> oders1 = OdersDao.getOdersAdmin();
+    List<Oders> oders2 = OdersDao.getOdersStatusNews();
+    List<Oders> oders3 = OdersDao.getOdersStatusCanel();
+%>
 
 <div class="left-sidebar-pro">
 
@@ -489,107 +501,123 @@
                         <div class="add-product">
                             <a href="product-edit.jsp">Thêm đơn hàng</a>
                         </div>
-                        <table>
-                            <tr>
-                                <th>Mã đơn hàng</th>
-                                <th>Tên khách hàng</th>
-                                <th>Trạng thái</th>
-                                <th>Ngày đặt hàng</th>
-                                <th>Giá trị đơn hàng</th>
-                                <th>Thông tin</th>
-                                <th>Thanh toán</th>
-                                <th>Cài đặt</th>
-                            </tr>
-                            <tr>
-                                <td>DH001</td>
-                                <td>Nguyễn Văn A</td>
-                                <td>Chuẩn bị hàng</td>
-                                <td>26/10/2023</td>
-                                <td>590.000</td>
-                                <td><a href="product-cart.html">xem chi tiết</a></td>
-                                <td>Chưa thanh toán</td>
-                                <td>
-                                    <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i
-                                            class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>DH002</td>
-                                <td>Trương Công Định</td>
-                                <td>Đã giao</td>
-                                <td>1/10/2023</td>
-                                <td>1.020.000</td>
-                                <td><a href="product-cart.html">xem chi tiết</a></td>
-                                <td>Đã thanh toán</td>
-                                <td>
-                                    <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i
-                                            class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>DH003</td>
-                                <td>Trần Thị Thúy Diễm</td>
-                                <td>Đã hủy</td>
-                                <td>12/10/2023</td>
-                                <td>1.050.000</td>
-                                <td><a href="product-cart.html">xem chi tiết</a></td>
-                                <td>- - -</td>
-                                <td>
-                                    <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i
-                                            class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>DH004</td>
-                                <td>Phạm Văn B</td>
-                                <td>Đang giao</td>
-                                <td>24/10/2023</td>
-                                <td>1.440.000</td>
-                                <td><a href="product-cart.html">xem chi tiết</a></td>
-                                <td>Chưa thanh toán</td>
-                                <td>
-                                    <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i
-                                            class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>DH005</td>
-                                <td>Lê Hữu Khánh</td>
-                                <td>Đang giao</td>
-                                <td>25/10/2023</td>
-                                <td>540.000</td>
-                                <td><a href="product-cart.html">xem chi tiết</a></td>
-                                <td>Đã thanh toán</td>
-                                <td>
-                                    <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i
-                                            class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>DH006</td>
-                                <td>Nguyễn thị B</td>
-                                <td>Giao thất bại</td>
-                                <td>24/10/2023</td>
-                                <td>4.000.000</td>
-                                <td><a href="product-cart.html">xem chi tiết</a></td>
-                                <td>Đã thanh toán</td>
-                                <td>
-                                    <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i
-                                            class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                </td>
-                            </tr>
+                        <ul id="myTab3" class="tab-review-design">
+                            <li class="active"><a href="#description"><i class="" aria-hidden="true"></i> Đơn hàng chưa hoàn thành</a></li>
+                            <li><a href="#all"><i class="" aria-hidden="true"></i> Tất cả đơn hàng</a></li>
+                            <li><a href="#cancel"><i class="" aria-hidden="true"></i> Đã hủy</a></li>
+                        </ul>
+                        <div id="myTabContent" class="tab-content custom-product-edit">
+                            <div class="product-tab-list tab-pane fade active in" id="description">
+                                <div class="row">
+                                    <table>
+                                        <tr>
+                                            <th>Mã đơn hàng</th>
+                                            <th>Tên khách hàng</th>
+                                            <th>Trạng thái</th>
+                                            <th>Ngày đặt hàng</th>
+                                            <th>Giá trị đơn hàng</th>
+                                            <th>Thông tin</th>
+                                            <th>Thanh toán</th>
+                                            <th>Cài đặt</th>
+                                        </tr>
+                                        <%
+                                            for (Oders oders : oders2){%>
 
 
-                        </table>
-<!--                        <div class="custom-pagination">-->
-<!--                            <ul class="pagination">-->
-<!--                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>-->
-<!--                                <li class="page-item"><a class="page-link" href="#">1</a></li>-->
-<!--                                <li class="page-item"><a class="page-link" href="#">2</a></li>-->
-<!--                                <li class="page-item"><a class="page-link" href="#">3</a></li>-->
-<!--                                <li class="page-item"><a class="page-link" href="#">Next</a></li>-->
-<!--                            </ul>-->
-<!--                        </div>-->
+                                        <tr>
+                                            <td><%=oders.getId()%></td>
+                                            <td><%=UserDao.getName(oders.getId())%></td>
+                                            <td><%=StatusDao.getName(oders.getStatus())%></td>
+                                            <td><%=oders.getDate()%>></td>
+                                            <td><%=Products.priceFormat(oders.getTotal())%></td>
+                                            <td>
+                                                <form action="./OderDetail" method="post">
+                                                    <input name="id" value="<%=oders.getId()%>">
+                                                    <button data-toggle="tooltip" title="submit" class=""><a
+                                                            href="product-cart.jsp"><i class="fa fa-pencil-square-o"
+                                                                                       aria-hidden="true"></i>xem chi tiết</a></button>
+                                                </form>
+                                                <a href="product-cart.jsp">xem chi tiết</a>
+                                            </td>
+                                            <td><%=StatusDao.getName(oders.getThanhtoan())%></td>
+                                            <td>
+                                                <form action="./UpdateStatusOder" method="post">
+                                                    <input name="madh" value="<%=oders.getId()%>" style="display: none">
+                                                    <button data-toggle="tooltip" title="submit" class="pd-setting-ed"><a
+                                                            href="updateOder.jsp"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></button>
+                                                </form>
+
+                                            </td>
+                                        </tr>
+                                        <% }%>
+                                    </table>
+
+                                </div>
+
+                            </div>
+                            <div class="product-tab-list tab-pane fade" id="all">
+                                <div class="row">
+                                    <table>
+                                        <tr>
+                                            <th>Mã đơn hàng</th>
+                                            <th>Tên khách hàng</th>
+                                            <th>Trạng thái</th>
+                                            <th>Ngày đặt hàng</th>
+                                            <th>Giá trị đơn hàng</th>
+                                            <th>Thông tin</th>
+                                            <th>Thanh toán</th>
+
+                                        </tr>
+                                        <%
+                                            for (Oders oders : oders1){%>
+
+
+                                        <tr>
+                                            <td><%=oders.getId()%></td>
+                                            <td><%=UserDao.getName(oders.getId())%></td>
+                                            <td><%=StatusDao.getName(oders.getStatus())%></td>
+                                            <td><%=oders.getDate()%>></td>
+                                            <td><%=Products.priceFormat(oders.getTotal())%></td>
+                                            <td><a href="product-cart.jsp">xem chi tiết</a></td>
+                                            <td><%=StatusDao.getName(oders.getThanhtoan())%></td>
+
+                                        </tr>
+                                        <% }%>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="product-tab-list tab-pane fade" id="cancel">
+                                <div class="row">
+                                    <table>
+                                        <tr>
+                                            <th>Mã đơn hàng</th>
+                                            <th>Tên khách hàng</th>
+                                            <th>Trạng thái</th>
+                                            <th>Ngày đặt hàng</th>
+                                            <th>Giá trị đơn hàng</th>
+                                            <th>Thông tin</th>
+                                            <th>Thanh toán</th>
+                                        </tr>
+                                        <%
+                                            for (Oders oders : oders3){%>
+
+
+                                        <tr>
+                                            <td><%=oders.getId()%></td>
+                                            <td><%=UserDao.getName(oders.getId())%></td>
+                                            <td><%=StatusDao.getName(oders.getStatus())%></td>
+                                            <td><%=oders.getDate()%>></td>
+                                            <td><%=Products.priceFormat(oders.getTotal())%></td>
+                                            <td><a href="product-cart.jsp">xem chi tiết</a></td>
+                                            <td><%=StatusDao.getName(oders.getThanhtoan())%></td>
+                                        </tr>
+                                        <% }%>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
             </div>

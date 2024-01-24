@@ -1,4 +1,12 @@
-<!doctype html>
+<%@ page import="vn.edu.hcmuaf.model.Oders" %>
+<%@ page import="vn.edu.hcmuaf.model.OderDetail" %>
+<%@ page import="vn.edu.hcmuaf.dao.OderDetailDao" %>
+<%@ page import="java.util.List" %>
+<%@ page import="vn.edu.hcmuaf.model.Products" %>
+<%@ page import="vn.edu.hcmuaf.dao.ProductsDao" %>
+<%@ page import="vn.edu.hcmuaf.dao.UserDao" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html class="no-js" lang="en">
 
 <head>
@@ -65,26 +73,32 @@
 </head>
 
 <body>
-
+<form action="./OderDetail" method="post">
+    <%
+        Oders oders = (Oders) request.getAttribute("oder");
+        if (oders==null) oders = new Oders();
+        List<OderDetail> oder = (List<OderDetail>) OderDetailDao.getOder(oders.getId());
+        if (oder == null) oder = new ArrayList<>();
+    %>
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header" style="height: 90px">
                 <a href="index.jsp"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
                 <strong><img src="img/logo/logo.png" alt="" /></strong>
             </div>
-			<div class="nalika-profile">
-				<div class="profile-dtl">
-					<a href="#"><img src="img/notification/picture.png" alt="" /></a>
-					<h2>Họ <span class="min-dtn">Tên</span></h2>
-				</div>
-				<div class="profile-social-dtl">
-					<ul class="dtl-social">
-						<li><a href="#"><i class="icon nalika-facebook"></i></a></li>
-						<li><a href="#"><i class="icon nalika-twitter"></i></a></li>
-						<li><a href="#"><i class="icon nalika-linkedin"></i></a></li>
-					</ul>
-				</div>
-			</div>
+            <div class="nalika-profile">
+                <div class="profile-dtl">
+                    <a href="#"><img src="img/notification/picture.png" alt="" /></a>
+                    <h2>Họ <span class="min-dtn">Tên</span></h2>
+                </div>
+                <div class="profile-social-dtl">
+                    <ul class="dtl-social">
+                        <li><a href="#"><i class="icon nalika-facebook"></i></a></li>
+                        <li><a href="#"><i class="icon nalika-twitter"></i></a></li>
+                        <li><a href="#"><i class="icon nalika-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
                 <nav class="sidebar-nav left-sidebar-menu-pro">
                     <ul class="metismenu" id="menu1">
@@ -96,7 +110,7 @@
                             <ul class="submenu-angle" aria-expanded="true">
                                 <li><a  href="index.jsp"><span class="mini-sub-pro">Bảng điều khiển</span></a></li>
                                 <li><a  href="product-list.html"><span class="mini-sub-pro">Danh sách sản phẩm</span></a></li>
-                                <li><a  href="cart-list.html"><span class="mini-sub-pro">Danh sách đơn hàng</span></a></li>
+                                <li><a  href="cart.jsp"><span class="mini-sub-pro">Danh sách đơn hàng</span></a></li>
                                 <li><a  href="product-type.jsp"><span class="mini-sub-pro">Danh mục sản phẩm</span></a></li>
                                 <li><a  href="analytics.html"><span class="mini-sub-pro">Phân tích</span></a></li>
                                 <li><a  href="blog.html"><span class="mini-sub-pro">Tin tức</span></a></li>
@@ -406,18 +420,18 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcomb-wp">
-											<div class="breadcomb-icon">
-												<i class="icon nalika-home"></i>
-											</div>
-											<div class="breadcomb-ctn" style="margin-top: 13px">
-												<h2>Chi Tiết Đơn Hàng</h2>
-											</div>
-										</div>
+                                            <div class="breadcomb-icon">
+                                                <i class="icon nalika-home"></i>
+                                            </div>
+                                            <div class="breadcomb-ctn" style="margin-top: 13px">
+                                                <h2>Chi Tiết Đơn Hàng</h2>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                                         <div class="breadcomb-report">
-											<button data-toggle="tooltip" data-placement="left" title="Tải xuống" class="btn"><i class="icon nalika-download"></i></button>
-										</div>
+                                            <button data-toggle="tooltip" data-placement="left" title="Tải xuống" class="btn"><i class="icon nalika-download"></i></button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -444,55 +458,24 @@
                                                     <th>Số lượng</th>
                                                     <th>Giá bán</th>
                                                     <th>Thành tiền</th>
-                                                    <th>Cài đặt</th>
                                                 </tr>
+                                                <%
+                                                    for (OderDetail o : oder){
+                                                        Products products = ProductsDao.getProduct(o.getMasp());
+                                                %>
                                                 <tr>
-                                                    <td><img src="img/product/1.jpg" alt="" /></td>
+                                                    <td><img src="<%=products.getUrl()%>" alt="" /></td>
                                                     <td>
-                                                        <h3>Windows 10 pro</h3>
+                                                        <h3><%=products.getName()%></h3>
                                                         <p> </p>
                                                     </td>
                                                     <td>
                                                         <input type="text" class="form-control" value="2">
                                                     </td>
-                                                    <td>490.000</td>
-                                                    <td>980.000</td>
-                                                    <td>
-                                                        <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                                    </td>
+                                                    <td><%=Products.priceFormat(products.getPrice())%></td>
+                                                    <td><%=Products.priceFormat(o.getTotal())%></td>
                                                 </tr>
-                                                <tr>
-                                                    <td><img src="img/product/1.jpg" alt="" /></td>
-                                                    <td>
-                                                        <h3>Windows 10 home</h3>
-                                                        <p> </p>
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" class="form-control" value="2">
-                                                    </td>
-                                                    <td>490.000</td>
-                                                    <td>980.000</td>
-                                                    <td>
-                                                        <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><img src="img/product/1.jpg" alt="" /></td>
-                                                    <td>
-                                                        <h3>Windows 10 pro</h3>
-                                                        <p> </p>
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" class="form-control" value="2">
-                                                    </td>
-                                                    <td>490.000</td>
-                                                    <td>980.000</td>
-                                                    <td>
-                                                        <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                                                    </td>
-                                                </tr>
-
-
+                                                <%   }%>
                                             </table>
                                         </div>
                                     </div>
@@ -502,71 +485,16 @@
                                     <h3 class="product-cart-dn">Shopping</h3>
                                     <div class="product-delivary">
                                         <div class="form-group">
-                                            <label for="card-number" class="form-label">Tên *</label>
-                                            <input id="name-2" name="name" type="text" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="card-number" class="form-label">Ho *</label>
-                                            <input id="surname-2" name="surname" type="text" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="card-number" class="form-label">Quốc gia</label>
-                                            <input id="surname" name="surname" type="text" class="form-control">
+                                            <label  class="form-label">Tên *</label>
+                                            <input id="name-2" name="name" type="text" class="form-control" value="<%=UserDao.getName(oders.getMaKH())%>">
                                         </div>
                                         <div class="form-group">
                                             <label for="address" class="form-label">Địa chỉ *</label>
-                                            <input id="address" name="address" type="text" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="city" class="form-label">Công ty/Doanh nghiệp</label>
-                                            <input id="city" name="city" type="text" class="form-control">
+                                            <input id="address" name="address" type="text" class="form-control" value="<%=oders.getAddress()%>">
                                         </div>
                                         <div class="form-group">
                                             <label for="phone-2" class="form-label">Điện thoại #</label>
-                                            <input id="phone-2" name="phone" type="number" class="form-control phone">
-                                        </div>
-                                    </div>
-                                </section>
-                                <h3>Thông tin thanh toán</h3>
-                                <section>
-<!--                                    <h3 class="product-cart-dn">Shopping</h3>-->
-                                    <div class="form-group mg-t-15">
-                                        <label for="card-number" class="form-label">Trạng thái thanh toán</label>
-                                        <input id="card" class="form-control" type="text" name="card_number" style="width: 50%">
-                                    </div>
-                                    <div class="form-group mg-t-15">
-                                        <label for="card-number" class="form-label">Hình thức thanh toán</label>
-                                        <input id="card-num" class="form-control" type="text" name="card_number" style="width: 50%">
-                                    </div>
-                                    <h4 style="color: white; margin-left: 10px">Thanh Toán trực tuyến bằng thẻ</h4>
-                                    <div class="payment-details">
-                                        <div class="form-group mg-t-15">
-                                            <label for="card-number" class="form-label">Loại thẻ</label>
-                                            <input id="card-number-1" class="form-control" type="text" name="card_number">
-                                        </div>
-                                        <div class="form-group mg-t-15">
-                                            <label for="card-number" class="form-label">Số thẻ</label>
-                                            <input id="card-number" class="form-control" type="text" name="card_number">
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <label  class="form-label">Ngày hết hạng</label>
-                                                <input id="card-number-3" class="form-control" type="text" name="card_number">
-                                                <div class="row gutter-xs">
-
-
-                                                </div>
-                                            </div>
-                                            <div class="col-md-5 offset-md-1">
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label for="cvv2-number" class="form-label">Mã bảo mật</label>
-                                                            <input id="cvv2-number" class="form-control" type="text" name="cvv2_number">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <input id="phone-2" name="phone" type="number" class="form-control phone" value="<%=oders.getPhone()%>">
                                         </div>
                                     </div>
                                 </section>
@@ -578,6 +506,9 @@
         </div>
 
     </div>
+
+</form>
+
 
     <!-- jquery
 		============================================ -->

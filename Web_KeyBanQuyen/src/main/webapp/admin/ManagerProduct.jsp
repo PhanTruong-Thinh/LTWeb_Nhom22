@@ -121,7 +121,7 @@
                             <li><a href="index.jsp"><span class="mini-sub-pro">Bảng điều khiển</span></a></li>
                             <li><a href="ManagerProduct.jsp"><span class="mini-sub-pro">Danh sách sản phẩm</span></a>
                             </li>
-                            <li><a href="cart-list.html"><span class="mini-sub-pro">Danh sách đơn hàng</span></a></li>
+                            <li><a href="cart.jsp"><span class="mini-sub-pro">Danh sách đơn hàng</span></a></li>
                             <li><a href="product-type.jsp"><span class="mini-sub-pro">Danh mục sản phẩm</span></a></li>
                             <li><a href="analytics.html"><span class="mini-sub-pro">Phân tích</span></a></li>
                             <li><a href="blog.html"><span class="mini-sub-pro">Tin tức</span></a></li>
@@ -537,7 +537,6 @@
                                     <th>Tên sản phẩm</th>
                                     <th>Trạng thái</th>
                                     <th>Số lượng</th>
-                                    <th>Tình trạng kho</th>
                                     <th>Giá bán(VND)</th>
                                     <th>Cài đặt</th>
                                 </tr>
@@ -560,8 +559,7 @@
                                     <%}%>
 
                                     <td><%=KhoDao.getNumberProduct(product.getMaSP())%></td>
-                                    <td><%=StatusDao.getName(product.getTinhTrang())%></td>
-                                    <td class="large-column no-scientific-notation no-wrap" style="white-space: nowrap; width: 300px"><%=product.getPrice()%></td>
+                                    <td class="large-column no-scientific-notation no-wrap" style="white-space: nowrap; width: 300px"><%=Products.priceFormat(product.getPrice())%></td>
                                     <td>
                                         <form action="./ProductDetail" method="post" style="float: left">
                                             <input type="hidden" name="productId" value="<%=product.getMaSP()%>">

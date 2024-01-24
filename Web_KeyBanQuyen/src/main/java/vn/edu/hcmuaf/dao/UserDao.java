@@ -71,6 +71,17 @@ public class UserDao {
         }
         return usersList;
     }
+    public static String getName(String id){
+        String result="";
+        try (Handle handle = JDBIConnector.me().open()){
+            String query ="SELECT `name` FROM customers WHERE makh=?";
+            result = handle.createQuery(query)
+                    .bind(0, id)
+                    .mapTo(String.class)
+                    .one();
+        }
+        return result;
+    }
 
     public static void main(String[] args) {
         List<User> userList = getUserByLevel(2);
