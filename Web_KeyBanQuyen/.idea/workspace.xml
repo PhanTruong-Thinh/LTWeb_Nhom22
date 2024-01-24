@@ -9,17 +9,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="321359e7-ee8d-49c9-8037-62d9be0aee7a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/LTWeb_Nhom22.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/LTWeb_Nhom22.iml" afterDir="false" />
+    <list default="true" id="321359e7-ee8d-49c9-8037-62d9be0aee7a" name="Changes" comment="upload: view products and directorys&#10; admin">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/control/Login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/dao/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/DB.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Web_KeyBanQuyen.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Web_KeyBanQuyen.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/db/DBProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/db/DBProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/db/JDBIConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/db/JDBIConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/Helloservlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/control/Helloservlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="LogFilters">
@@ -39,16 +61,25 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.ProductsDao.executor": "Run",
+    "Application.StatusDao.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat .executor": "Run",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Bien",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "F:/Lab/Project/LTWeb_Nhom22/Web_KeyBanQuyen",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "F:/DW_2023_T5_Nhom13/Thinh_Staging",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -57,19 +88,45 @@
       <recent name="F:\Lab\Demo\maven\Web_KeyBanQuyen\src\main\webapp" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Tomcat 9.0.82" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.82" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+  <component name="RunManager" selected="Tomcat Server.Tomcat ">
+    <configuration name="ProductsDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="vn.edu.hcmuaf.dao.ProductsDao" />
+      <module name="Web_KeyBanQuyen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="vn.edu.hcmuaf.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StatusDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="vn.edu.hcmuaf.dao.StatusDao" />
+      <module name="Web_KeyBanQuyen" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="vn.edu.hcmuaf.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat " type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat " ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Web_KeyBanQuyen:war">
           <settings>
-            <option name="CONTEXT_PATH" value="/Web_KeyBanQuyen_war" />
+            <option name="CONTEXT_PATH" value="" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="dbc55a97-8b2f-4dfc-9599-6e6134d2ebab" />
-        <option name="HTTP_PORT" value="13560" />
+        <option name="BASE_DIRECTORY_NAME" value="c77eab0d-184b-4640-bc60-1ce745a6e8b8" />
+        <option name="HTTP_PORT" value="8081" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -77,7 +134,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="50935" />
+        <option name="DEBUG_PORT" value="50906" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -146,6 +203,19 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ProductsDao" />
+        <item itemvalue="Application.StatusDao" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-f644763e9732-ebaef533" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -158,6 +228,22 @@
       <workItem from="1700411205467" duration="497000" />
       <workItem from="1700753855725" duration="54000" />
       <workItem from="1700753997264" duration="628000" />
+      <workItem from="1700921183881" duration="110000" />
+      <workItem from="1701703500207" duration="7012000" />
+      <workItem from="1701710723789" duration="994000" />
+      <workItem from="1702018583081" duration="13000" />
+      <workItem from="1702378645595" duration="1571000" />
+      <workItem from="1702827439544" duration="5170000" />
+      <workItem from="1703089760712" duration="38000" />
+      <workItem from="1704809671025" duration="6709000" />
+      <workItem from="1704904671690" duration="3981000" />
+      <workItem from="1705246667263" duration="4943000" />
+      <workItem from="1705498758198" duration="2020000" />
+      <workItem from="1705500883869" duration="5868000" />
+      <workItem from="1705508802693" duration="1605000" />
+      <workItem from="1705758547312" duration="10830000" />
+      <workItem from="1705802405555" duration="991000" />
+      <workItem from="1705843490127" duration="13790000" />
     </task>
     <servers />
   </component>

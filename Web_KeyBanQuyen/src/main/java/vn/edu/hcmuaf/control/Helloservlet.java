@@ -1,4 +1,4 @@
-package vn.edu.hcmuaf.service;
+package vn.edu.hcmuaf.control;
 
 public class Helloservlet {
 }
