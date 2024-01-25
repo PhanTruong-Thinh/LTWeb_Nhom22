@@ -244,7 +244,7 @@
                                                             class="icon nalika-settings author-log-ic"></span> Cài
                                                         đặt</a>
                                                     </li>
-                                                    <li><a href="logi2n.jsp"><span
+                                                    <li><a href="../Login.jsp"><span
                                                             class="icon nalika-unlocked author-log-ic"></span> Đăng xuất</a>
                                                     </li>
                                                 </ul>
@@ -513,7 +513,7 @@
 
                             %>
                             <tr>
-                                <td><img src="img/new-product/5-small.jpg" alt=""/></td>
+                                <td><img src="img/notification/picture.png" alt=""/></td>
                                 <td><%=user.getMaNv()%></td>
                                 <td><%=user.getUsername()%></td>
                                 <td><%=user.getEmail()%></td>

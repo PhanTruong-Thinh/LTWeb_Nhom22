@@ -44,8 +44,9 @@ public class OderService extends HttpServlet {
             Set<String> setkey = list.keySet();
             for (String k:setkey){
                 long p = ProductsDao.getPriceProduct(k) * list.get(k);
-                total += p;
                 OderDetailDao.insert(id, k, list.get(k), p);
+                total += p;
+
             }
 
             String name = req.getParameter("billing_first_name");
@@ -57,6 +58,9 @@ public class OderService extends HttpServlet {
             session.setAttribute("cart", cart);
 
             req.getRequestDispatcher("/infeo.jsp").forward(req,resp);
+
+            Thread.sleep(2000);
+            OdersDao.updateOder(id, "DH05");
         }catch (Exception e){
 
         }

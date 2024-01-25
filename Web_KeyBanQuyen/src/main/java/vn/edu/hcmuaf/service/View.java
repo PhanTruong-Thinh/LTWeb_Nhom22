@@ -2,6 +2,7 @@ package vn.edu.hcmuaf.service;
 
 import vn.edu.hcmuaf.dao.ProductsDao;
 import vn.edu.hcmuaf.model.Products;
+import vn.edu.hcmuaf.model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,10 +21,17 @@ public class View extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String id = req.getParameter("maview");
-        Products products = ProductsDao.getProduct(id);
         HttpSession session = req.getSession();
-        session.setAttribute("de", products);
-        req.getRequestDispatcher("./single-product.jsp").forward(req,resp);
+        User user = (User) session.getAttribute("auth");
+        if (user!=null){
+            String id = req.getParameter("maview");
+            Products products = ProductsDao.getProduct(id);
+
+            session.setAttribute("de", products);
+            req.getRequestDispatcher("./single-product.jsp").forward(req,resp);
+        }else {
+            req.getRequestDispatcher("./Login.jsp").forward(req,resp);
+        }
+
     }
 }

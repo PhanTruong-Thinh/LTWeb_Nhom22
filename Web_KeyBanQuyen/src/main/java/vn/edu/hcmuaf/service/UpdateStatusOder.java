@@ -19,7 +19,7 @@ public class UpdateStatusOder extends HttpServlet {
             OdersDao.updateStatusOder(id, status);
 
         }
-        req.getRequestDispatcher("/admin/cart.jsp").forward(req,resp);
+        req.getRequestDispatcher("/admin/updateOder.jsp").forward(req,resp);
 
     }
 

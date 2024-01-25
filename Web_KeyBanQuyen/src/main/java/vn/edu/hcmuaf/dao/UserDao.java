@@ -16,23 +16,21 @@ public class UserDao {
     public static List<User> getUserByLevel(int level) {
         List<User> usersList= new ArrayList<User>();
         try (Handle handle = JDBIConnector.me().open()) {
-            // Thực hiện truy vấn để lấy dữ liệu ID từ bảng staging
-            String query = "SELECT maND, name, address, email, phone, username, password,date FROM customers WHERE level=?";
-
-            Query queryObj = handle.createQuery(query)
+            String query ="SELECT makh, `name`, address, email, phone, username, `password`, `level`, `create` FROM customers WHERE level=?";
+            Query Ojb = handle.createQuery(query)
                     .bind(0, level);
-            usersList = queryObj.map((rs, ctx) ->
+            usersList = Ojb.map((rs,ctx)->
                     new User(
-                            rs.getString("maND"),
+                            rs.getString("makh"),
                             rs.getString("name"),
                             rs.getString("address"),
                             rs.getString("email"),
                             rs.getString("phone"),
                             rs.getString("username"),
                             rs.getString("password"),
-                            rs.getTimestamp("date")
-                    )
-            ).list();
+                            rs.getInt("level"),
+                            rs.getTimestamp("create")
+                    )).list();
 
 
         } catch (Exception e) {
@@ -46,22 +44,20 @@ public class UserDao {
     public static List<User> getUserByLevelAdmin() {
         List<User> usersList= new ArrayList<User>();
         try (Handle handle = JDBIConnector.me().open()) {
-            // Thực hiện truy vấn để lấy dữ liệu ID từ bảng staging
-            String query = "SELECT maND, name, address, email, phone, username, password,date FROM customers WHERE level!=2";
-
-            Query queryObj = handle.createQuery(query);
-            usersList = queryObj.map((rs, ctx) ->
+            String query ="SELECT makh, `name`, address, email, phone, username, `password`, `level`, `create` FROM customers WHERE level!=2";
+            Query Ojb = handle.createQuery(query);
+            usersList = Ojb.map((rs,ctx)->
                     new User(
-                            rs.getString("maND"),
+                            rs.getString("makh"),
                             rs.getString("name"),
                             rs.getString("address"),
                             rs.getString("email"),
                             rs.getString("phone"),
                             rs.getString("username"),
                             rs.getString("password"),
-                            rs.getTimestamp("date")
-                    )
-            ).list();
+                            rs.getInt("level"),
+                            rs.getTimestamp("create")
+                    )).list();
 
 
         } catch (Exception e) {

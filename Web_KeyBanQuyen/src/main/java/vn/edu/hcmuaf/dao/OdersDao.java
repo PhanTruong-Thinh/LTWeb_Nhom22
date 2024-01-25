@@ -1,5 +1,6 @@
 package vn.edu.hcmuaf.dao;
 
+import ch.qos.logback.core.encoder.EchoEncoder;
 import org.jdbi.v3.core.Handle;
 import org.jdbi.v3.core.statement.Query;
 import org.jdbi.v3.core.statement.Update;
@@ -207,6 +208,17 @@ public class OdersDao {
                     .bind(7, thanhtoan);
             update.execute();
         }
+    }
 
+    public static void updateOder(String id, String statsu){
+        try (Handle handle=JDBIConnector.me().open()){
+            String query = "UPDATE dondathang SET trangthai=? WHERE madonhang=?";
+            Update update = handle.createUpdate(query)
+                    .bind(0, statsu)
+                    .bind(1, id);
+            update.execute();
+        }catch (Exception e){
+
+        }
     }
 }

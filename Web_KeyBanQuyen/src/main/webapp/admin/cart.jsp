@@ -250,7 +250,7 @@
                                                             class="icon nalika-settings author-log-ic"></span> Cài
                                                         đặt</a>
                                                     </li>
-                                                    <li><a href="logi2n.jsp"><span
+                                                    <li><a href="../Login.jsp"><span
                                                             class="icon nalika-unlocked author-log-ic"></span> Đăng xuất</a>
                                                     </li>
                                                 </ul>
@@ -535,9 +535,9 @@
                                             <td>
                                                 <form action="./OderDetail" method="post">
                                                     <input name="id" value="<%=o.getId()%>" style="display: none">
-                                                    <button data-toggle="tooltip" title="submit" class="" style="background: none"><a
-                                                            href="product-cart.jsp"><i class="fa fa-pencil-square-o"
-                                                                                       aria-hidden="true"></i>xem chi tiết</a></button>
+                                                    <button data-toggle="tooltip" title="submit" class="pd-setting-ed"><a
+                                                            href="updateOder.jsp"><i class="fa fa-pencil-square-o"
+                                                                                                  aria-hidden="true"></i></a></button>
                                                 </form>
 
                                             </td>
