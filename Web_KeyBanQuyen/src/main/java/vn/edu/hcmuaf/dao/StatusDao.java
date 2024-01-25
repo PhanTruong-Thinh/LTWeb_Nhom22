@@ -54,6 +54,30 @@ public class StatusDao {
         }
         return  statusList;
     }
+    /*
+    trạng thái đơn hàng chưa hoàn thành
+     */
+    public static List<Status> getStatusByOderNew(){
+        List<Status> statusList= new ArrayList<Status>();
+        try (Handle handle = JDBIConnector.me().open()) {
+            // Thực hiện truy vấn để lấy dữ liệu ID từ bảng staging
+            String query = "SELECT id, `name`, `create` FROM statu WHERE id IN (\"DH04\",\"DH05\",\"DH06\",\"DH07\")";
+
+            Query queryObj = handle.createQuery(query);
+            statusList = queryObj.map((rs, ctx) ->
+                    new Status(
+                            rs.getString("id"),
+                            rs.getString("name"),
+                            rs.getTimestamp("create")
+                    )
+            ).list();
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Nếu có lỗi, trả về một danh sách trống
+            return List.of();
+        }
+        return  statusList;
+    }
     public  static String getName(String id){
         String result="";
         try (Handle handle = JDBIConnector.me().open()){

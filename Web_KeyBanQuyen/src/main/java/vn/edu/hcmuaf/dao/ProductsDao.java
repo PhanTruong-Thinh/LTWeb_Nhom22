@@ -24,7 +24,7 @@ public class ProductsDao {
         List<Products> productsList= new ArrayList<Products>();
         try (Handle handle = JDBIConnector.me().open()) {
             // Thực hiện truy vấn để lấy dữ liệu ID từ bảng staging
-            String query = "SELECT sanpham.masp,sanpham.tensp, sanpham.hinhanh, sanpham.giaban,  statu.`name` FROM sanpham JOIN statu  ON sanpham.trangthai = statu.id ";
+            String query = "SELECT  sanpham.masp,sanpham.tensp, sanpham.hinhanh, sanpham.giaban,  statu.`name` FROM sanpham JOIN statu  ON sanpham.trangthai = statu.id ";
 
             Query queryObj = handle.createQuery(query);
             productsList = queryObj.map((rs, ctx) ->
@@ -33,7 +33,7 @@ public class ProductsDao {
                             rs.getString("masp"),
                             rs.getString("tenSP"),
                             rs.getString("name"),
-                            rs.getDouble("giaban")
+                            rs.getLong("giaban")
                     )
                     ).list();
 
@@ -62,7 +62,7 @@ public class ProductsDao {
                             rs.getString("masp"),
                             rs.getString("tenSP"),
                             rs.getString("name"),
-                            rs.getDouble("giaban")
+                            rs.getLong("giaban")
                     )
             ).list();
 
@@ -111,7 +111,7 @@ public class ProductsDao {
                             rs.getString("tensp"),
                             rs.getString("loaisp"),
                             rs.getString("mota"),
-                            rs.getDouble("giaban"),
+                            rs.getLong("giaban"),
                             rs.getString("phienban"),
                             rs.getString("hangsx"),
                             rs.getString("hinhanh"),
@@ -176,6 +176,20 @@ public class ProductsDao {
             update.execute();
 
         }
+    }
+
+    /*
+    lấy giá bán của 1 sản phẩm
+     */
+    public static int getPriceProduct(String id){
+        int result=0;
+        try (Handle handle = JDBIConnector.me().open()){
+            String query ="SELECT giaban FROM sanpham WHERE masp=?";
+            result = handle.createQuery(query).bind(0, id)
+                    .mapTo(Integer.class)
+                    .one();
+        }
+        return result;
     }
     public static void main(String[] args) {
         List<Products> list = getProductByDiretory("20237001");

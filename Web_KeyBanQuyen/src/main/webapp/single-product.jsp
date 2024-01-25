@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<!--
-	ustora by freshdesignweb.com
-	Twitter: https://twitter.com/freshdesignweb
-	URL: https://www.freshdesignweb.com/ustora/
--->
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -44,7 +39,7 @@
                     <ul>
                         <li><a href="#"><i class="fa fa-user"></i> Tài khoản của tôi</a></li>
                         <li><a href="#"><i class="fa fa-heart"></i> Danh sách mong muốn</a></li>
-                        <li><a href="cart.html"><i class="fa fa-user"></i> Giỏ hàng </a></li>
+                        <li><a href="cart.jsp"><i class="fa fa-user"></i> Giỏ hàng </a></li>
                         <li><a href="checkout.html"><i class="fa fa-user"></i> Thanh toán</a></li>
                         <li><a href="#"><i class="fa fa-user"></i> Đăng nhập</a></li>
                     </ul>
@@ -89,7 +84,7 @@
 
             <div class="col-sm-6">
                 <div class="shopping-item">
-                    <a href="cart.html">Giỏ hàng - <span class="cart-amunt">1.000.000đ</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                    <a href="cart.jsp">Giỏ hàng - <span class="cart-amunt">1.000.000đ</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
                 </div>
             </div>
         </div>
@@ -111,7 +106,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="home.html">Trang chủ</a></li>
                     <li><a href="shop.html">Sản phẩm</a></li>
-                    <li><a href="cart.html">Giỏ hàng</a></li>
+                    <li><a href="cart.jsp">Giỏ hàng</a></li>
                     <li><a href="#">Liên Hệ</a></li>
 
                 </ul>
@@ -220,11 +215,12 @@
                                     <ins>949.000đ</ins> <del>1.130.000đ</del>
                                 </div>
 
-                                <form action="" class="cart">
+                                <form action="./CartServlet" class="cart" method="post">
+                                    <input name="ma" value="20080001" style="display: none">
                                     <div class="quantity">
-                                        <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
+                                        <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quan" min="1" step="1">
                                     </div>
-                                    <button class="add_to_cart_button" type="submit">Thêm vào giỏ hàng</button>
+                                    <button name="command" class="add_to_cart_button" type="submit" value="insert">Thêm vào giỏ hàng</button>
                                 </form>
 
                                 <div class="product-inner-category">
@@ -248,8 +244,8 @@
                                         <div role="tabpanel" class="tab-pane fade" id="profile">
                                             <h2>Đánh giá</h2>
                                             <div class="submit-review">
-                                                <p><label for="name">Tên</label> <input name="name" type="text"></p>
-                                                <p><label for="email">Email</label> <input name="email" type="email"></p>
+                                                <p><%--@declare id="name"--%><label for="name">Tên</label> <input name="name" type="text"></p>
+                                                <p><%--@declare id="email"--%><label for="email">Email</label> <input name="email" type="email"></p>
                                                 <div class="rating-chooser">
                                                     <p>Bình chọn của bạn</p>
 
@@ -261,7 +257,7 @@
                                                         <i class="fa fa-star"></i>
                                                     </div>
                                                 </div>
-                                                <p><label for="review">Đánh giá của bạn</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
+                                                <p><%--@declare id="review"--%><label for="review">Đánh giá của bạn</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
                                                 <p><input type="submit" value="Gửi"></p>
                                             </div>
                                         </div>

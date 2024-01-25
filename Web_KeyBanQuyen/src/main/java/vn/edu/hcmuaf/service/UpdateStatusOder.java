@@ -1,8 +1,6 @@
 package vn.edu.hcmuaf.service;
 
-import vn.edu.hcmuaf.dao.DirectorysDao;
-import vn.edu.hcmuaf.dao.ProductsDao;
-import vn.edu.hcmuaf.model.Products;
+import vn.edu.hcmuaf.dao.OdersDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,16 +9,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "RemoveCategory", value = "/admin/RemoveCategory")
-public class RemoveCategory extends HttpServlet {
+@WebServlet(name = "UpdateStatusOder", value = "/admin/UpdateStatusOder")
+public class UpdateStatusOder extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String id = req.getParameter("ma");
+        String id = req.getParameter("madh");
+        if (id!=null){
+            String status = req.getParameter("select");
+            OdersDao.updateStatusOder(id, status);
 
-        if (id!=null && ProductsDao.numberProductByDirectory(id)==0){
-            DirectorysDao.removeCategory(id);
         }
-        req.getRequestDispatcher("/admin/product-type.jsp").forward(req, resp);
+        req.getRequestDispatcher("/admin/cart.jsp").forward(req,resp);
+
     }
 
     @Override

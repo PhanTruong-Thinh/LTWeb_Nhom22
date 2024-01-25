@@ -1,6 +1,8 @@
 package vn.edu.hcmuaf.model;
 
+import java.text.NumberFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class Products {
 
@@ -9,7 +11,7 @@ public class Products {
     private String name;
     private String  typeProduct;
     private String moTa;
-    private double price;
+    private long price;
     private String version;
     private String hangSX;
     private String url;
@@ -25,7 +27,7 @@ public class Products {
     public Products() {
     }
 
-    public Products(String url,String id, String name, String status, int number, String tinhTrang, double price){
+    public Products(String url,String id, String name, String status, int number, String tinhTrang, long price){
         this.url = url;
         this.maSP = id;
         this.name = name;
@@ -34,7 +36,7 @@ public class Products {
         this.tinhTrang = tinhTrang;
         this.price = price;
     }
-    public Products(String url,String id, String name, String status, double price){
+    public Products(String url,String id, String name, String status, long price){
         this.url = url;
         this.maSP = id;
         this.name = name;
@@ -43,7 +45,7 @@ public class Products {
     }
 
 
-    public Products(String maSP, String maDM, String name, String typeProduct, String moTa, double price, String version, String hangSX, String url, String hangDung, String baoHanh, Date create, int number, int numberUser, String status, String tinhTrang) {
+    public Products(String maSP, String maDM, String name, String typeProduct, String moTa, long price, String version, String hangSX, String url, String hangDung, String baoHanh, Date create, int number, int numberUser, String status, String tinhTrang) {
         this.maSP = maSP;
         this.maDM = maDM;
         this.name = name;
@@ -61,7 +63,7 @@ public class Products {
         this.status = status;
         this.tinhTrang = tinhTrang;
     }
-    public Products(String maSP, String maDM, String name, String typeProduct, String moTa, double price, String version, String hangSX, String url, String hangDung, String baoHanh, Date create, int numberUser, String status) {
+    public Products(String maSP, String maDM, String name, String typeProduct, String moTa, long price, String version, String hangSX, String url, String hangDung, String baoHanh, Date create, int numberUser, String status) {
         this.maSP = maSP;
         this.maDM = maDM;
         this.name = name;
@@ -119,11 +121,11 @@ public class Products {
         this.moTa = moTa;
     }
 
-    public double getPrice() {
+    public long getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(long price) {
         this.price = price;
     }
 
@@ -205,6 +207,13 @@ public class Products {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+
+    public static String priceFormat(long price){
+        Locale locale = new Locale("vi", "VN");
+        NumberFormat format = NumberFormat.getCurrencyInstance(locale);
+        return format.format(price);
     }
 
     @Override
