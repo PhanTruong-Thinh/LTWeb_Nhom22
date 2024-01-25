@@ -46,6 +46,31 @@ public class ProductsDao {
         return productsList;
     }
 
+    public static List<Products> getProducts() {
+        List<Products> productsList= new ArrayList<Products>();
+        try (Handle handle = JDBIConnector.me().open()) {
+            // Thực hiện truy vấn để lấy dữ liệu ID từ bảng staging
+            String query = "SELECT  masp,tensp, hinhanh, giaban,phienban FROM sanpham  ";
+
+            Query queryObj = handle.createQuery(query);
+            productsList = queryObj.map((rs, ctx) ->
+                    new Products(
+                            rs.getString("hinhanh"),
+                            rs.getString("masp"),
+                            rs.getString("tenSP"),
+                            rs.getLong("giaban"),
+                            rs.getString("phienban")
+                    )
+            ).list();
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Nếu có lỗi, trả về một danh sách trống
+            return List.of();
+        }
+        return productsList;
+    }
     /*
     lấy sản phẩm theo danh mục
      */
@@ -73,6 +98,35 @@ public class ProductsDao {
         }
         return productsList;
     }
+/*
+loc danh sach san pham theo danh muc : 10 san pham
+ */
+
+
+public static List<Products> getProductByDiretoryTop(String diretory) {
+    List<Products> productsList= new ArrayList<Products>();
+    try (Handle handle = JDBIConnector.me().open()) {
+        // Thực hiện truy vấn để lấy dữ liệu ID từ bảng staging
+        String query = "SELECT  sanpham.masp,sanpham.tensp, sanpham.hinhanh, sanpham.giaban, sanpham.phienban, statu.`name` FROM sanpham JOIN statu ON sanpham.trangthai = statu.id WHERE sanpham.danhmuc=? GROUP BY sanpham.tensp, sanpham.hinhanh, sanpham.giaban,sanpham.phienban, statu.`name` LIMIT 8";
+        Query queryObj = handle.createQuery(query).bind(0,diretory);
+        productsList = queryObj.map((rs, ctx) ->
+                new Products(
+                        rs.getString("hinhanh"),
+                        rs.getString("masp"),
+                        rs.getString("tenSP"),
+                        rs.getString("name"),
+                        rs.getLong("giaban"),
+                        rs.getString("phienban")
+                )
+        ).list();
+
+    } catch (Exception e) {
+        e.printStackTrace();
+        // Nếu có lỗi, trả về một danh sách trống
+        return List.of();
+    }
+    return productsList;
+}
 
     /*
     tổng số sản phẩm thuộc 1 danh mục

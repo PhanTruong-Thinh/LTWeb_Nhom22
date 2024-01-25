@@ -1,3 +1,11 @@
+<%@ page import="java.util.List" %>
+<%@ page import="vn.edu.hcmuaf.model.Products" %>
+<%@ page import="vn.edu.hcmuaf.dao.ProductsDao" %>
+<%@ page import="vn.edu.hcmuaf.model.Cart" %>
+<%@ page import="java.util.Set" %>
+<%@ page import="java.util.TreeMap" %>
+<%@ page import="vn.edu.hcmuaf.model.Directorys" %>
+<%@ page import="vn.edu.hcmuaf.dao.DirectorysDao" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -30,7 +38,19 @@
     <![endif]-->
 </head>
 <body>
+<%
+//    Cart cart = (Cart) session.getAttribute("cart");
+////    TreeMap<String, Integer> list = cart.getList();
+//    long total=0;
+//    Set<String> setkey = cart.getList().keySet();
+//    for (String k:setkey){
+//        total += ProductsDao.getPriceProduct(k) * cart.getList().get(k);
+//    }
 
+    List<Directorys> directorys = DirectorysDao.getDirectorysAdmin();
+
+
+%>
 <div class="header-area">
     <div class="container">
         <div class="row">
@@ -78,13 +98,13 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="logo">
-                    <h1><a href="home.html"><img src="admin/img/logo/logo.png"></a></h1>
+                    <h1><a href="index.jsp"><img src="admin/img/logo/logo.png"></a></h1>
                 </div>
             </div>
 
             <div class="col-sm-6">
                 <div class="shopping-item">
-                    <a href="cart.jsp">Giỏ hàng - <span class="cart-amunt">100.000&#x20AB</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+<%--                    <a href="cart.jsp">Giỏ hàng - <span class="cart-amunt"><%=Products.priceFormat(total)%></span> <i class="fa fa-shopping-cart"></i> <span class="product-count"><%=cart.getList().size()%></span></a>--%>
                 </div>
             </div>
         </div>
@@ -104,8 +124,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="home.html">Trang chủ</a></li>
-                    <li><a href="shop.html">Sản phẩm</a></li>
+                    <li class="active"><a href="index.jsp">Trang chủ</a></li>
+                    <li><a href="shop.jsp">Sản phẩm</a></li>
                     <li><a href="cart.jsp">Giỏ hàng</a></li>
                     <li><a href="#">Liên hệ</a></li>
                 </ul>
@@ -297,7 +317,45 @@
                             </div>
                         </div>
                     </div>
+                </div></div>
+            </div>
+        <%
+            for (Directorys d: directorys){
+            List<Products> pro = ProductsDao.getProductByDiretoryTop(d.getId());
+            if (pro != null || (pro.size()>0 && pro.size()==8) ){%>
+        <h2 class="section-title" style="margin-top: 30px"><%=d.getName()%></h2>
+        <%
+            for (Products p : pro) {%>
+        <div class="col-md-3 col-sm-6 ">
+            <div class="single-shop-product">
+                <div class="product-upper">
+                    <img src="<%=p.getUrl()%>" alt="">
                 </div>
+                <input name="maview" value="<%=p.getMaSP()%>" style="display: none">
+                <h2 class="h2-product"><a type="submit" ><%=p.getName()+" "+p.getVersion()%></a></h2>
+                <div class="product-carousel-price">
+                    <ins><%=Products.priceFormat(p.getPrice())%></ins> <del>999.000 &#x20AB</del>
+                </div>
+
+                <div class="product-option-shop">
+                    <form action="./View" method="post">
+                        <input name="maview" value="<%=p.getMaSP()%>" style="display: none">
+                        <button type="submit"><a class="add_to_cart_button" type="submit" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="">Xem</a>
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+            <%    }%>
+        <%    }else {continue;}}%>
+
+
+
+
+
+
             </div>
         </div>
     </div>

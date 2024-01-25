@@ -96,7 +96,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="logo">
-                        <h1><a href="home.html"><img src="admin/img/logo/logo.png"></a></h1>
+                        <h1><a href="index.jsp"><img src="admin/img/logo/logo.png"></a></h1>
                     </div>
                 </div>
 
@@ -122,8 +122,8 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="home.html">Trang chủ</a></li>
-                        <li><a href="shop.html">Sản phẩm</a></li>
+                        <li><a href="index.jsp">Trang chủ</a></li>
+                        <li><a href="shop.jsp">Sản phẩm</a></li>
                         <li class="active"><a href="cart.jsp">Giỏ hàng</a></li>
                         <li><a href="#">Liên Hệ</a></li>
                     </ul>

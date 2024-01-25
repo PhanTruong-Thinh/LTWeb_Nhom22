@@ -44,6 +44,23 @@ public class Products {
         this.price = price;
     }
 
+    public Products(String url,String id, String name, String status, long price, String version){
+        this.url = url;
+        this.maSP = id;
+        this.name = name;
+        this.status = status;
+        this.price = price;
+        this.version = version;
+    }
+    public Products(String url,String id, String name, long price, String version){
+        this.url = url;
+        this.maSP = id;
+        this.name = name;
+        this.price = price;
+        this.version = version;
+    }
+
+
 
     public Products(String maSP, String maDM, String name, String typeProduct, String moTa, long price, String version, String hangSX, String url, String hangDung, String baoHanh, Date create, int number, int numberUser, String status, String tinhTrang) {
         this.maSP = maSP;

@@ -1,3 +1,7 @@
+<%@ page import="vn.edu.hcmuaf.model.Products" %>
+<%@ page import="java.util.List" %>
+<%@ page import="vn.edu.hcmuaf.model.Image" %>
+<%@ page import="vn.edu.hcmuaf.dao.ImageDao" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
@@ -31,332 +35,342 @@
 </head>
 <body>
 
-<div class="header-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="user-menu">
-                    <ul>
-                        <li><a href="#"><i class="fa fa-user"></i> Tài khoản của tôi</a></li>
-                        <li><a href="#"><i class="fa fa-heart"></i> Danh sách mong muốn</a></li>
-                        <li><a href="cart.jsp"><i class="fa fa-user"></i> Giỏ hàng </a></li>
-                        <li><a href="checkout.html"><i class="fa fa-user"></i> Thanh toán</a></li>
-                        <li><a href="#"><i class="fa fa-user"></i> Đăng nhập</a></li>
-                    </ul>
+<form action="./View" method="post">
+    <%
+        Products products = (Products) session.getAttribute("view");
+        if (products==null) products = new Products();
+        List<Image> images = ImageDao.getImageProductByID(products.getMaSP());
+    %>
+    <div class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="user-menu">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-user"></i> Tài khoản của tôi</a></li>
+                            <li><a href="#"><i class="fa fa-heart"></i> Danh sách mong muốn</a></li>
+                            <li><a href="cart.jsp"><i class="fa fa-user"></i> Giỏ hàng </a></li>
+                            <li><a href="checkout.html"><i class="fa fa-user"></i> Thanh toán</a></li>
+                            <li><a href="#"><i class="fa fa-user"></i> Đăng nhập</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-md-4">
-                <div class="header-right">
-                    <ul class="list-unstyled list-inline">
-                        <li class="dropdown dropdown-small">
-                            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">Tiền tệ :</span><span class="value">VNĐ </span><b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">VNĐ</a></li>
-                                <li><a href="#">INR</a></li>
-                                <li><a href="#">GBP</a></li>
-                            </ul>
-                        </li>
+                <div class="col-md-4">
+                    <div class="header-right">
+                        <ul class="list-unstyled list-inline">
+                            <li class="dropdown dropdown-small">
+                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">Tiền tệ :</span><span class="value">VNĐ </span><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">VNĐ</a></li>
+                                    <li><a href="#">INR</a></li>
+                                    <li><a href="#">GBP</a></li>
+                                </ul>
+                            </li>
 
-                        <li class="dropdown dropdown-small">
-                            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">Ngôn ngữ :</span><span class="value">Tiếng việt</span><b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Tiếng Việt</a></li>
-                                <li><a href="#">Tiếng Anh</a></li>
-                                <li><a href="#">Tiếng Pháp</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> <!-- End header area -->
-
-<div class="site-branding-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="logo">
-                    <h1><a href="home.html"><img src="admin/img/logo/logo.png"></a></h1>
-                </div>
-            </div>
-
-            <div class="col-sm-6">
-                <div class="shopping-item">
-                    <a href="cart.jsp">Giỏ hàng - <span class="cart-amunt">1.000.000đ</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                            <li class="dropdown dropdown-small">
+                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">Ngôn ngữ :</span><span class="value">Tiếng việt</span><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Tiếng Việt</a></li>
+                                    <li><a href="#">Tiếng Anh</a></li>
+                                    <li><a href="#">Tiếng Pháp</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div> <!-- End site branding area -->
+    </div> <!-- End header area -->
 
-<div class="mainmenu-area">
-    <div class="container">
-        <div class="row">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+    <div class="site-branding-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="logo">
+                        <h1><a href="index.jsp"><img src="admin/img/logo/logo.png"></a></h1>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="shopping-item">
+                        <a href="cart.jsp">Giỏ hàng - <span class="cart-amunt">1.000.000đ</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                    </div>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="home.html">Trang chủ</a></li>
-                    <li><a href="shop.html">Sản phẩm</a></li>
-                    <li><a href="cart.jsp">Giỏ hàng</a></li>
-                    <li><a href="#">Liên Hệ</a></li>
+        </div>
+    </div> <!-- End site branding area -->
 
-                </ul>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Tìm kiếm...">
-                    <span class="input-group-btn">
+    <div class="mainmenu-area">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.jsp">Trang chủ</a></li>
+                        <li><a href="shop.jsp">Sản phẩm</a></li>
+                        <li><a href="cart.jsp">Giỏ hàng</a></li>
+                        <li><a href="#">Liên Hệ</a></li>
+
+                    </ul>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Tìm kiếm...">
+                        <span class="input-group-btn">
                         <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
                     </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End mainmenu area -->
+
+    <div class="product-big-title-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-bit-title text-center">
+                        <h2>Chi tiết sản phẩm</h2>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div> <!-- End mainmenu area -->
-
-<div class="product-big-title-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="product-bit-title text-center">
-                    <h2>Chi tiết sản phẩm</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 
-<div class="single-product-area">
-    <div class="zigzag-bottom"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
+    <div class="single-product-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
 
 
-                <div class="single-sidebar">
-                    <h2 class="sidebar-title">Sản phẩm</h2>
-                    <div class="thubmnail-recent">
-                        <img src="img/Windows_1/win/windows-11-education.png" class="recent-thumb" alt="">
-                        <h2><a href="">Window 11 Education</a></h2>
-                        <div class="product-sidebar-price">
-                            <ins>239.000đ</ins> <del> 2.790.000đ</del>
-                        </div>
-                    </div>
-                    <div class="thubmnail-recent">
-                        <img src="img/may ao_3/VMware-Workstation-17-Pro.png" class="recent-thumb" alt="">
-                        <h2><a href="">VMware Workstation 17 Pro</a></h2>
-                        <div class="product-sidebar-price">
-                            <ins>849.000₫</ins> <del>3.700.000₫</del>
-                        </div>
-                    </div>
-                    <div class="thubmnail-recent">
-                        <img src="img/Tiện Ích_2/parallels-19-pro-1nam.png" class="recent-thumb" alt="">
-                        <h2><a href="">Parallels Desktop for Mac</a></h2>
-                        <div class="product-sidebar-price">
-                            <ins>990.000₫</ins> <del> 3.490.000₫</del>
-                        </div>
-                    </div>
-                    <div class="thubmnail-recent">
-                        <img src="img/Lưu Trữ_3/dropbox-plus-2tb.png" class="recent-thumb" alt="">
-                        <h2><a href="">Dropbox Professional (3TB)</a></h2>
-                        <div class="product-sidebar-price">
-                            <ins>1.690.000₫</ins> <del>4.600.000₫</del>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="single-sidebar">
-                    <h2 class="sidebar-title">Bài đăng gần đây</h2>
-                    <ul>
-                        <li><a href="">Hotspot Shield VPN 1 Năm</a></li>
-                        <li><a href="">Nâng cấp Google One (Drive, Photos, Gmail…)</a></li>
-                        <li><a href="">Tài khoản CyberGhost VPN 1 Năm</a></li>
-                        <li><a href="">Betterzip 5 for Mac</a></li>
-                        <li><a href="">Microsoft 365 (1 Năm) – 1TB</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-md-8">
-                <div class="product-content-right">
-                    <div class="product-breadcroumb">
-                        <a href="">Trang chủ</a>
-                        <a href="">Tên sản phẩm</a>
-                        <a href="">Discord Nitro 1 Năm</a>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="product-images">
-                                <div class="product-main-img">
-                                    <img src="img/Giải trí_3/discord-nitro-1-nam.png" alt="">
-                                </div>
-
-                                <div class="product-gallery">
-                                    <img src="img/product-thumb-13.png" alt="">
-                                    <img src="img/product-thumb-14.png" alt="">
-                                    <img src="img/product-thumb-15.png" alt="">
-                                </div>
+                    <div class="single-sidebar">
+                        <h2 class="sidebar-title">Sản phẩm</h2>
+                        <div class="thubmnail-recent">
+                            <img src="img/Windows_1/win/windows-11-education.png" class="recent-thumb" alt="">
+                            <h2><a href="">Window 11 Education</a></h2>
+                            <div class="product-sidebar-price">
+                                <ins>239.000đ</ins> <del> 2.790.000đ</del>
                             </div>
                         </div>
+                        <div class="thubmnail-recent">
+                            <img src="img/may ao_3/VMware-Workstation-17-Pro.png" class="recent-thumb" alt="">
+                            <h2><a href="">VMware Workstation 17 Pro</a></h2>
+                            <div class="product-sidebar-price">
+                                <ins>849.000₫</ins> <del>3.700.000₫</del>
+                            </div>
+                        </div>
+                        <div class="thubmnail-recent">
+                            <img src="img/Tiện Ích_2/parallels-19-pro-1nam.png" class="recent-thumb" alt="">
+                            <h2><a href="">Parallels Desktop for Mac</a></h2>
+                            <div class="product-sidebar-price">
+                                <ins>990.000₫</ins> <del> 3.490.000₫</del>
+                            </div>
+                        </div>
+                        <div class="thubmnail-recent">
+                            <img src="img/Lưu Trữ_3/dropbox-plus-2tb.png" class="recent-thumb" alt="">
+                            <h2><a href="">Dropbox Professional (3TB)</a></h2>
+                            <div class="product-sidebar-price">
+                                <ins>1.690.000₫</ins> <del>4.600.000₫</del>
+                            </div>
+                        </div>
+                    </div>
 
-                        <div class="col-sm-6">
-                            <div class="product-inner">
-                                <h2 class="product-name">Discord Nitro 1 Năm</h2>
-                                <div class="product-inner-price">
-                                    <ins>949.000đ</ins> <del>1.130.000đ</del>
-                                </div>
+                    <div class="single-sidebar">
+                        <h2 class="sidebar-title">Bài đăng gần đây</h2>
+                        <ul>
+                            <li><a href="">Hotspot Shield VPN 1 Năm</a></li>
+                            <li><a href="">Nâng cấp Google One (Drive, Photos, Gmail…)</a></li>
+                            <li><a href="">Tài khoản CyberGhost VPN 1 Năm</a></li>
+                            <li><a href="">Betterzip 5 for Mac</a></li>
+                            <li><a href="">Microsoft 365 (1 Năm) – 1TB</a></li>
+                        </ul>
+                    </div>
+                </div>
 
-                                <form action="./CartServlet" class="cart" method="post">
-                                    <input name="ma" value="20080001" style="display: none">
-                                    <div class="quantity">
-                                        <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quan" min="1" step="1">
+                <div class="col-md-8">
+                    <div class="product-content-right">
+                        <div class="product-breadcroumb">
+                            <a href="">Trang chủ</a>
+                            <a href="">Tên sản phẩm</a>
+                            <a href="">Discord Nitro 1 Năm</a>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="product-images">
+                                    <div class="product-main-img">
+                                        <img src="<%=products.getUrl()%>" alt="">
                                     </div>
-                                    <button name="command" class="add_to_cart_button" type="submit" value="insert">Thêm vào giỏ hàng</button>
-                                </form>
 
-                                <div class="product-inner-category">
-                                    <p>Category: <a href="">Màu vàng</a>. Tags: <a href="">tuyệt vời</a>, <a href="">tốt nhất</a>, <a href="">giảm giá</a>, <a href="">shoes</a>. </p>
+                                    <div class="product-gallery">
+                                        <%
+                                            for (Image i:images) {%>
+                                        <img src="<%=i.getUrl()%>" alt="">
+                                        <%    }
+                                        %>
+                                    </div>
                                 </div>
+                            </div>
 
-                                <div role="tabpanel">
-                                    <ul class="product-tab" role="tablist">
-                                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Mô tả</a></li>
-                                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Đánh giá</a></li>
-                                    </ul>
-                                    <div class="tab-content">
-                                        <div role="tabpanel" class="tab-pane fade in active" id="home">
-                                            <h2>Mô tả sản phẩm</h2>
-                                            <p>Nâng cấp Discord Nitro giá rẻ 1 năm là một dịch vụ đăng ký cao cấp của Discord. Có thể nói là một hình thức cao cấp các dịch vụ trò chuyện, được tích hợp trong các trò chơi phổ biến hiện nay.
+                            <div class="col-sm-6">
+                                <div class="product-inner">
+                                    <h2 class="product-name"><%=products.getName()+" "+products.getVersion()%></h2>
+                                    <div class="product-inner-price">
+                                        <ins><%=Products.priceFormat(products.getPrice())%></ins>
+                                    </div>
 
-                                                Khi mua gói sản phẩm, bạn sẽ được truy cập toàn cầu để có thể sử dụng tất cả các biểu tượng cảm xúc từ các trò chơi, kênh mà bạn tham gia. Điển hình như thẻ số Discord, ảnh đại diện,…Không những thế, Discord Nitro còn cung cấp những tính năng ưu việt nhất, cải tiến nhất, nhằm đáp ứng cho người dùng có những trải nghiệm mới nhất. Trong Key bản quyền Discord Nitro còn phát huy lợi ích tối đa khi bạn “live” trực tuyến trò chơi hoặc dùng camera quay cận mặt. </p>
-
-                                            <p>Những lợi ích khi mua Discord Nitro (+2 Boost) giá rẻ: Cung cấp những biểu tưởng, cảm xúc thú vị, tải tệp tốt hơn, hỗ trợ máy chủ hoạt động tốt hơn, cải thiện chất lượng video và thêm vào đó có một số lợi ích ưu việt như: Có thể đăng tải ảnh đại diện bằng video gif, hỗ trợ chọn tag tài khoản Discord, nâng cấp giới hạn tệp.</p>
+                                    <form action="./CartServlet" class="cart" method="post">
+                                        <input name="ma" value="<%=products.getMaSP()%>" style="display: none">
+                                        <div class="quantity">
+                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quan" min="1" step="1">
                                         </div>
-                                        <div role="tabpanel" class="tab-pane fade" id="profile">
-                                            <h2>Đánh giá</h2>
-                                            <div class="submit-review">
-                                                <p><%--@declare id="name"--%><label for="name">Tên</label> <input name="name" type="text"></p>
-                                                <p><%--@declare id="email"--%><label for="email">Email</label> <input name="email" type="email"></p>
-                                                <div class="rating-chooser">
-                                                    <p>Bình chọn của bạn</p>
+                                        <button name="command" class="add_to_cart_button" type="submit" value="insert">Thêm vào giỏ hàng</button>
+                                    </form>
 
-                                                    <div class="rating-wrap-post">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
+                                    <div class="product-inner-category">
+                                        <p>Hãng: <a href=""><%=products.getHangSX()%></a>. Tags: <a href="">tuyệt vời</a>, <a href="">tốt nhất</a>, <a href="">giảm giá</a>, <a href="">shoes</a>. </p>
+                                        <p>Bảo hành: <a href=""><%=products.getBaoHanh()%></a> </p>
+                                        <p>Hạng sử dụng: <a href=""><%=products.getBaoHanh()%></a> </p>
+                                        <p>Thiết bị: <a href=""><%=products.getNumberUser()%></a> </p>
+                                        <p>Trạng thái: <a href=""><%=products.getTinhTrang()%></a> </p>
+
+                                    </div>
+
+                                    <div role="tabpanel">
+                                        <ul class="product-tab" role="tablist">
+                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Mô tả</a></li>
+                                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Đánh giá</a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                                <h2>Mô tả sản phẩm</h2>
+                                                <p><%=products.getMoTa()%></p>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane fade" id="profile">
+                                                <h2>Đánh giá</h2>
+                                                <div class="submit-review">
+                                                    <p><%--@declare id="name"--%><label for="name">Tên</label> <input name="name" type="text"></p>
+                                                    <p><%--@declare id="email"--%><label for="email">Email</label> <input name="email" type="email"></p>
+                                                    <div class="rating-chooser">
+                                                        <p>Bình chọn của bạn</p>
+
+                                                        <div class="rating-wrap-post">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                        </div>
                                                     </div>
+                                                    <p><%--@declare id="review"--%><label for="review">Đánh giá của bạn</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
+                                                    <p><input type="submit" value="Gửi"></p>
                                                 </div>
-                                                <p><%--@declare id="review"--%><label for="review">Đánh giá của bạn</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
-                                                <p><input type="submit" value="Gửi"></p>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
+                                </div>
                             </div>
                         </div>
-                    </div>
 
 
-                    <div class="related-products-wrapper">
-                        <h2 class="related-products-title">Các sản phẩm tương tự</h2>
-                        <div class="related-products-carousel">
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="img/Giải trí_3/spotify-4-thang.png" alt="">
-                                    <div class="product-hover">
-                                        <a href="" class="add-to-cart-link" style="font-size: 11px"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
-                                        <a href="" class="view-details-link" style="font-size: 11px"><i class="fa fa-link"></i> Xem chi tiết</a>
+                        <div class="related-products-wrapper">
+                            <h2 class="related-products-title">Các sản phẩm tương tự</h2>
+                            <div class="related-products-carousel">
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="img/Giải trí_3/spotify-4-thang.png" alt="">
+                                        <div class="product-hover">
+                                            <a href="" class="add-to-cart-link" style="font-size: 11px"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
+                                            <a href="" class="view-details-link" style="font-size: 11px"><i class="fa fa-link"></i> Xem chi tiết</a>
+                                        </div>
+                                    </div>
+                                    <h2><a href="">Spotify Premium</a></h2>
+                                    <div class="product-carousel-price">
+                                        <ins>299.000₫</ins> <del>690.000₫</del>
                                     </div>
                                 </div>
-                                <h2><a href="">Spotify Premium</a></h2>
-                                <div class="product-carousel-price">
-                                    <ins>299.000₫</ins> <del>690.000₫</del>
-                                </div>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="img/Giải trí_3/discord-nitro-code-1-thang.png" alt="">
-                                    <div class="product-hover">
-                                        <a href="" class="add-to-cart-link" style="font-size: 11px"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
-                                        <a href="" class="view-details-link" style="font-size: 11px"><i class="fa fa-link"></i> Xem chi tiết</a>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="img/Giải trí_3/discord-nitro-code-1-thang.png" alt="">
+                                        <div class="product-hover">
+                                            <a href="" class="add-to-cart-link" style="font-size: 11px"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
+                                            <a href="" class="view-details-link" style="font-size: 11px"><i class="fa fa-link"></i> Xem chi tiết</a>
+                                        </div>
+                                    </div>
+
+                                    <h2><a href="">Discord Nitro (code 1 tháng)</a></h2>
+                                    <div class="product-carousel-price">
+                                        <ins>109.000 ₫</ins>
                                     </div>
                                 </div>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="img/Giải trí_3/discord-nitro-basic.png" alt="">
+                                        <div class="product-hover">
+                                            <a href="" class="add-to-cart-link" style="font-size: 11px"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
+                                            <a href="" class="view-details-link" style="font-size: 11px"><i class="fa fa-link"></i> Xem chi tiết</a>
+                                        </div>
+                                    </div>
 
-                                <h2><a href="">Discord Nitro (code 1 tháng)</a></h2>
-                                <div class="product-carousel-price">
-                                    <ins>109.000 ₫</ins>
-                                </div>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="img/Giải trí_3/discord-nitro-basic.png" alt="">
-                                    <div class="product-hover">
-                                        <a href="" class="add-to-cart-link" style="font-size: 11px"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
-                                        <a href="" class="view-details-link" style="font-size: 11px"><i class="fa fa-link"></i> Xem chi tiết</a>
+                                    <h2><a href="">Discord Nitro Basic 1 tháng</a></h2>
+
+                                    <div class="product-carousel-price">
+                                        <ins>90.000 ₫</ins>
                                     </div>
                                 </div>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="img/product-thumb-13.png" alt="">
+                                        <div class="product-hover">
+                                            <a href="" class="add-to-cart-link" style="font-size: 11px"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+                                            <a href="" class="view-details-link" style="font-size: 11px"><i class="fa fa-link"></i> Xem chi tiết</a>
+                                        </div>
+                                    </div>
 
-                                <h2><a href="">Discord Nitro Basic 1 tháng</a></h2>
+                                    <h2><a href="">Sony playstation microsoft</a></h2>
 
-                                <div class="product-carousel-price">
-                                    <ins>90.000 ₫</ins>
-                                </div>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="img/product-thumb-13.png" alt="">
-                                    <div class="product-hover">
-                                        <a href="" class="add-to-cart-link" style="font-size: 11px"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
-                                        <a href="" class="view-details-link" style="font-size: 11px"><i class="fa fa-link"></i> Xem chi tiết</a>
+                                    <div class="product-carousel-price">
+                                        <ins>$200.00</ins> <del>$225.00</del>
                                     </div>
                                 </div>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="img/product-thumb-13.png" alt="">
+                                        <div class="product-hover">
+                                            <a href="" class="add-to-cart-link" style="font-size: 11px"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+                                            <a href="" class="view-details-link" style="font-size: 11px"><i class="fa fa-link"></i> Xem chi tiết</a>
+                                        </div>
+                                    </div>
 
-                                <h2><a href="">Sony playstation microsoft</a></h2>
+                                    <h2><a href="">Sony Smart Air Condtion</a></h2>
 
-                                <div class="product-carousel-price">
-                                    <ins>$200.00</ins> <del>$225.00</del>
-                                </div>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="img/product-thumb-13.png" alt="">
-                                    <div class="product-hover">
-                                        <a href="" class="add-to-cart-link" style="font-size: 11px"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
-                                        <a href="" class="view-details-link" style="font-size: 11px"><i class="fa fa-link"></i> Xem chi tiết</a>
+                                    <div class="product-carousel-price">
+                                        <ins>$1200.00</ins> <del>$1355.00</del>
                                     </div>
                                 </div>
-
-                                <h2><a href="">Sony Smart Air Condtion</a></h2>
-
-                                <div class="product-carousel-price">
-                                    <ins>$1200.00</ins> <del>$1355.00</del>
-                                </div>
-                            </div>
-                            <div class="single-product">
-                                <div class="product-f-image">
-                                    <img src="img/product-6.jpg" alt="">
-                                    <div class="product-hover">
-                                        <a href="" class="add-to-cart-link" style="font-size: 11px"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
-                                        <a href="" class="view-details-link" style="font-size: 11px"><i class="fa fa-link"></i> Xem chi tiết</a>
+                                <div class="single-product">
+                                    <div class="product-f-image">
+                                        <img src="img/product-6.jpg" alt="">
+                                        <div class="product-hover">
+                                            <a href="" class="add-to-cart-link" style="font-size: 11px"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+                                            <a href="" class="view-details-link" style="font-size: 11px"><i class="fa fa-link"></i> Xem chi tiết</a>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <h2><a href="">Samsung gallaxy note 4</a></h2>
+                                    <h2><a href="">Samsung gallaxy note 4</a></h2>
 
-                                <div class="product-carousel-price">
-                                    <ins>$400.00</ins>
+                                    <div class="product-carousel-price">
+                                        <ins>$400.00</ins>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -365,7 +379,8 @@
             </div>
         </div>
     </div>
-</div>
+
+</form>
 
 
 <div class="footer-top-area">
