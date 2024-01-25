@@ -153,6 +153,34 @@ public class OdersDao {
         return oders;
 
     }
+    public static List<Oders> getOdersbyKH(String id) {
+        List<Oders> oders = new ArrayList<>();
+        try (Handle handle = JDBIConnector.me().open()) {
+            // Thực hiện truy vấn để lấy dữ liệu ID từ bảng staging
+            String query = "SELECT madonhang, makh, ngaytao, tongdh, ten, sdt, diachi, trangthai, thanhtoan FROM dondathang WHERE makh=?";
+
+            Query queryObj = handle.createQuery(query).bind(0,id);
+            oders = queryObj.map((rs, ctx) ->
+                    new Oders(
+                            rs.getString("madonhang"),
+                            rs.getString("makh"),
+                            rs.getTimestamp("ngaytao"),
+                            rs.getLong("tongdh"),
+                            rs.getString("ten"),
+                            rs.getString("sdt"),
+                            rs.getString("diachi"),
+                            rs.getString("trangthai"),
+                            rs.getString("thanhtoan")
+                    )
+            ).list();
+
+
+        } catch (Exception e) {
+
+        }
+        return oders;
+
+    }
 
 
     public static void updateStatusOder(String id, String status){

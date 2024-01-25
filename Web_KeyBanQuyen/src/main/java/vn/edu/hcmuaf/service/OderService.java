@@ -53,6 +53,8 @@ public class OderService extends HttpServlet {
 
             OdersDao.insertOders(id, user.getMaNv(), total, user.getName(), user.getPhone(), address, "DH04", "TH02");
 
+            cart = new Cart();
+            session.setAttribute("cart", cart);
 
             req.getRequestDispatcher("/infeo.jsp").forward(req,resp);
         }catch (Exception e){

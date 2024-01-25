@@ -60,11 +60,12 @@
                 <div class="col-md-8">
                     <div class="user-menu">
                         <ul>
-                            <li><a href="#"><i class="fa fa-user"></i> Tài khoản của tôi</a></li>
+                            <li><a href="user.jsp"><i class="fa fa-user"></i> Tài khoản của tôi</a></li>
                             <li><a href="#"><i class="fa fa-heart"></i> Danh sách mong muốn</a></li>
                             <li><a href="cart.jsp"><i class="fa fa-user"></i> Giỏ hàng </a></li>
                             <li><a href="checkout.jsp"><i class="fa fa-user"></i> Thanh toán</a></li>
                             <li><a href="#"><i class="fa fa-user"></i> Đăng nhập</a></li>
+                            <li><a href="Login.jsp"><i class="fa fa-user"></i> Đăng xuất</a></li>
                         </ul>
                     </div>
                 </div>
@@ -212,8 +213,8 @@
                     <div class="product-content-right">
                         <div class="product-breadcroumb">
                             <a href="">Trang chủ</a>
-                            <a href="">Tên sản phẩm</a>
-                            <a href="">Discord Nitro 1 Năm</a>
+                            <a href="">Sản pẩm</a>
+                            <a href=""><%=products.getName() +" "+products.getVersion()%></a>
                         </div>
 
                         <div class="row">
