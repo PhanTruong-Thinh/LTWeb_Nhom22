@@ -10,17 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="321359e7-ee8d-49c9-8037-62d9be0aee7a" name="Changes" comment="upload: view products and directorys&#10; admin">
+      <change afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/Register.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/dao/OdersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/dao/OdersDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/CartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/CartServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/OderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/OderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/UpdateStatusOder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/UpdateStatusOder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vn/edu/hcmuaf/service/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/adminAccount.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/adminAccount.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/analytics.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/analytics.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/sign_up.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sign_up.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -278,7 +273,7 @@
       <workItem from="1705936005906" duration="3980000" />
       <workItem from="1706082034955" duration="25872000" />
       <workItem from="1706158658924" duration="13683000" />
-      <workItem from="1706180115046" duration="22034000" />
+      <workItem from="1706180115046" duration="24990000" />
     </task>
     <servers />
   </component>

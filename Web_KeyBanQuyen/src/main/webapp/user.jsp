@@ -186,11 +186,6 @@
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                             <div class="review-content-section">
-                                                <p>Tên người dùng: </p>
-                                                <div class="input-group mg-b-pro-edt">
-                                                    <span class="input-group-addon"><i class="fa fa-tags" aria-hidden="true"></i></span>
-                                                    <input type="text"  class="form-control" name="name" placeholder="tên" value="<%=user.getName()%>">
-                                                </div>
                                                 <p>Tên đăng nhập: </p>
                                                 <div class="input-group mg-b-pro-edt">
 

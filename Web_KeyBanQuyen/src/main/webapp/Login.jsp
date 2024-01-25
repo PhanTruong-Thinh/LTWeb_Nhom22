@@ -89,7 +89,7 @@
 						</div>
 
 						<div class="flex-col-c p-t-20">
-							<a href="sign_up.html" class="txt2">
+							<a href="sign_up.jsp" class="txt2">
 								<u >Đăng ký</u>
 							</a>
 						</div>

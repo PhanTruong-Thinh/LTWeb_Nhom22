@@ -3,6 +3,7 @@ package vn.edu.hcmuaf.dao;
 import org.jdbi.v3.core.Handle;
 import org.jdbi.v3.core.statement.Query;
 
+import org.jdbi.v3.core.statement.Update;
 import vn.edu.hcmuaf.db.JDBIConnector;
 import vn.edu.hcmuaf.model.Products;
 import vn.edu.hcmuaf.model.User;
@@ -67,6 +68,32 @@ public class UserDao {
         }
         return usersList;
     }
+    public static List<User> getUser() {
+        List<User> usersList= new ArrayList<User>();
+        try (Handle handle = JDBIConnector.me().open()) {
+            String query ="SELECT makh, `name`, address, email, phone, username, `password`, `level`, `create` FROM customers ";
+            Query Ojb = handle.createQuery(query);
+            usersList = Ojb.map((rs,ctx)->
+                    new User(
+                            rs.getString("makh"),
+                            rs.getString("name"),
+                            rs.getString("address"),
+                            rs.getString("email"),
+                            rs.getString("phone"),
+                            rs.getString("username"),
+                            rs.getString("password"),
+                            rs.getInt("level"),
+                            rs.getTimestamp("create")
+                    )).list();
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Nếu có lỗi, trả về một danh sách trống
+            return List.of();
+        }
+        return usersList;
+    }
     public static String getName(String id){
         String result="";
         try (Handle handle = JDBIConnector.me().open()){
@@ -102,6 +129,21 @@ public class UserDao {
 
         }
         return user;
+    }
+    public static void insertUser(String id, String name, String address, String phone, String email, String pass){
+        try (Handle handle=JDBIConnector.me().open()){
+            String query ="INSERT INTO customers(makh, `name`, address, email, phone, username,`password`,`level`,`create`) VALUES (?,?,?,?,?,?,?,2,NOW())";
+            Update update = handle.createUpdate(query)
+                    .bind(0, id)
+                    .bind(1, name)
+                    .bind(2, address)
+                    .bind(3, email)
+                    .bind(4, phone)
+                    .bind(5, name)
+                    .bind(6, pass);
+            update.execute();
+        }
+
     }
 
     public static void main(String[] args) {
