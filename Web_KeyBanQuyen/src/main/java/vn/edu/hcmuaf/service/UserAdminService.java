@@ -3,6 +3,7 @@ package vn.edu.hcmuaf.service;
 
 import vn.edu.hcmuaf.dao.UserDao;
 import vn.edu.hcmuaf.db.JDBIConnector;
+import vn.edu.hcmuaf.model.User;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,18 +16,16 @@ public class UserAdminService {
         return instance;
     }
 
-//    public UserAdmin checkLogin(String email, String pass){
-////        UserAdmin userAdminbyemail = UserDao.getUserEmail(email);
-//        if (userAdminbyemail !=null && userAdminbyemail.getEmail().equals(email) && userAdminbyemail.getPassword().equals(pass))
-//                return userAdminbyemail;
-//        return null;
-//    }
-//
-//    public static void main(String[] args) {
-//        List<UserAdmin> userAdmins = JDBIConnector.me().withHandle(handle ->
-//                handle.createQuery("select * from useradmin").mapToBean(UserAdmin.class).collect(Collectors.toList()));
-//
-//        UserAdmin u = UserAdminService.getInstance().checkLogin("thinh@gmail.com", "123");
-//        System.out.println(u);
-//    }
+    public User checkLogin(String name, String pass){
+        User userAdminbyemail = UserDao.getUserName(name);
+        if (userAdminbyemail !=null && userAdminbyemail.getUsername().equals(name) && userAdminbyemail.getPassword().equals(pass))
+                return userAdminbyemail;
+        return null;
+    }
+
+    public static void main(String[] args) {
+
+        User u = UserAdminService.getInstance().checkLogin("thinh", "123");
+        System.out.println(u);
+    }
 }

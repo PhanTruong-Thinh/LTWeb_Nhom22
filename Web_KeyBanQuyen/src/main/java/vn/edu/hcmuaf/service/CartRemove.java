@@ -30,7 +30,7 @@ public class CartRemove extends HttpServlet {
             switch (comand){
                 case "X":
                     KhoDao.updateQuantilyProduct(id, cart.getList().get(id), false);
-                    cart.removeProduct("20080001");
+                    cart.removeProduct(id);
                     session.setAttribute("cart",cart);
                 break;
                 case "Cập nhật":

@@ -1,5 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<%--
+  Created by IntelliJ IDEA.
+  User: THINH
+  Date: 1/25/2024
+  Time: 8:10 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
     <title>Thông báo</title>
     <meta charset="UTF-8">
@@ -34,16 +41,11 @@
         <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
             <form class="login100-form validate-form">
 					<span class="login100-form-title p-b-49" style="font-family:  Arial; font-size: 36px; font-weight: bold; color: #0E993C">
-						Đăng ký thành công
+						Đặt hàng thành công
 					</span>
 
-                <p style="margin-left: 90px; color: red;font-family:  Arial">Cảm ơn bạn đã đăng ký tài khoản!</p>
-<!--                <div class="wrap-input100 validate-input m-b-23" data-validate = "email is reauired">-->
-<!--                    -->
-<!--&lt;!&ndash;                    <span class="label-input100" style="font-family:  Arial; font-size: 16px">Nhập mã xác thực</span>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <input style="font-family:  Arial" class="input100" type="text" name="email" placeholder="mã xác thực">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <span class="focus" data-symbol="&#xf206;"></span>&ndash;&gt;-->
-<!--                </div>-->
+                <p style="margin-left: 90px; color: red;font-family:  Arial">Cảm ơn bạn đã mua hàng!</p>
+
 
                 <div class="text-right p-t-8 p-b-31">
 
@@ -53,7 +55,7 @@
                     <div class="wrap-login100-form-btn">
                         <div class="login100-form-bgbtn"></div>
                         <button class="login100-form-btn" style="font-family:  Arial">
-                            <a href="Login.jsp" style="color: white; font-size: 18px">Đăng nhập</a>
+                            <a href="index.jsp" style="color: white; font-size: 18px">Quay Về</a>
                         </button>
                     </div>
                 </div>

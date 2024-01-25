@@ -36,7 +36,7 @@
 <%
     List<Products> productsList = ProductsDao.getProducts();
 %>
-<form action="./ProductView" method="post">
+<form action="./View" method="post">
     <div class="header-area">
         <div class="container">
             <div class="row">
@@ -46,8 +46,8 @@
                             <li><a href="#"><i class="fa fa-user"></i> Tài khoản của tôi</a></li>
                             <li><a href="#"><i class="fa fa-heart"></i> Danh sách mong muốn</a></li>
                             <li><a href="cart.jsp"><i class="fa fa-user"></i> Giỏ hàng </a></li>
-                            <li><a href="checkout.html"><i class="fa fa-user"></i> Thanh toán</a></li>
-                            <li><a href="Login.html"><i class="fa fa-user"></i> Đăng nhập</a></li>
+                            <li><a href="checkout.jsp"><i class="fa fa-user"></i> Thanh toán</a></li>
+                            <li><a href="Login.jsp"><i class="fa fa-user"></i> Đăng nhập</a></li>
                         </ul>
                     </div>
                 </div>
@@ -156,12 +156,10 @@
                             <ins><%=Products.priceFormat(p.getPrice())%></ins>
                         </div>
 
-                        <form action="./View" method="post">
                             <div class="product-option-shop">
                                 <input name="maview" value="<%=p.getMaSP()%>" style="display: none">
                                 <button name="button" value="de" type="submit" style="width: 250px; background: #1e88e5; color: white; border: none">Xem</button>
                             </div>
-                        </form>
 
 
                     </div>
@@ -170,31 +168,31 @@
 
             </div>
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="product-pagination text-center">
-                        <nav>
-                            <ul class="pagination">
-                                <li>
-                                    <a href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li>
-                                    <a href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
+<%--            <div class="row">--%>
+<%--                <div class="col-md-12">--%>
+<%--                    <div class="product-pagination text-center">--%>
+<%--                        <nav>--%>
+<%--                            <ul class="pagination">--%>
+<%--                                <li>--%>
+<%--                                    <a href="#" aria-label="Previous">--%>
+<%--                                        <span aria-hidden="true">&laquo;</span>--%>
+<%--                                    </a>--%>
+<%--                                </li>--%>
+<%--                                <li><a href="#">1</a></li>--%>
+<%--                                <li><a href="#">2</a></li>--%>
+<%--                                <li><a href="#">3</a></li>--%>
+<%--                                <li><a href="#">4</a></li>--%>
+<%--                                <li><a href="#">5</a></li>--%>
+<%--                                <li>--%>
+<%--                                    <a href="#" aria-label="Next">--%>
+<%--                                        <span aria-hidden="true">&raquo;</span>--%>
+<%--                                    </a>--%>
+<%--                                </li>--%>
+<%--                            </ul>--%>
+<%--                        </nav>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
         </div>
     </div>
 </form>

@@ -1,6 +1,7 @@
 package vn.edu.hcmuaf.model;
 
 import javax.xml.crypto.Data;
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class User {
@@ -12,7 +13,7 @@ public class User {
     private String username;
 
     private String password;
-    private String level;
+    private int level;
     private Date date;
 
     public User() {
@@ -30,7 +31,19 @@ public class User {
 
     }
 
-    public User(String id, String name, String address, String email, String phone, String username, String password, String level) {
+    public User(String id, String name, String address, String email, String phone, String username, String password, int level, Date date) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.email = email;
+        this.phone = phone;
+        this.username = username;
+        this.password = password;
+        this.level = level;
+        this.date = date;
+    }
+
+    public User(String id, String name, String address, String email, String phone, String username, String password, int level) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -40,6 +53,7 @@ public class User {
         this.password = password;
         this.level = level;
     }
+
 
     public String getMaNv() {
         return id;
@@ -105,11 +119,11 @@ public class User {
         this.phone = phone;
     }
 
-    public String getLevel() {
+    public int getLevel() {
         return level;
     }
 
-    public void setLevel(String level) {
+    public void setLevel(int level) {
         this.level = level;
     }
 

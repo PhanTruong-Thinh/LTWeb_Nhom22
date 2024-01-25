@@ -214,7 +214,11 @@
                                                     </li>
                                                     <li><a href="#"><span class="icon nalika-settings author-log-ic"></span> Cài đặt</a>
                                                     </li>
-                                                    <li><a href="login.jsp"><span class="icon nalika-unlocked author-log-ic"></span> Đăng xuất</a>
+                                                    <li>
+<%--                                                        <form action="./logOut" method="post">--%>
+<%--                                                            <button type="submit">Đăng xuất</button>--%>
+<%--                                                        </form> --%>
+                                                        <a href="../Login.jsp"><span class="icon nalika-unlocked author-log-ic"></span> Đăng xuất</a>
                                                     </li>
                                                 </ul>
                                             </li>

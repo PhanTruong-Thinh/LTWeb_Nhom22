@@ -77,6 +77,22 @@ public class OdersDao {
         }
         return odersList;
     }
+    public static List<String> getID() {
+        List<String> odersList= new ArrayList<String>();
+        try (Handle handle = JDBIConnector.me().open()) {
+            // Thực hiện truy vấn để lấy dữ liệu ID từ bảng staging
+            String query = "SELECT madonhang FROM dondathang";
+            Query queryObj = handle.createQuery(query);
+            odersList = queryObj.mapTo(String.class).list();
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Nếu có lỗi, trả về một danh sách trống
+            return List.of();
+        }
+        return odersList;
+    }
     /*
    lấy danh sách đơn hàng theo hình thức đơn hàng chưa hoàn thành
     */
@@ -147,5 +163,22 @@ public class OdersDao {
                     .bind(1, id);
             update.execute();
         }
+    }
+
+    public static void insertOders(String id, String makh, long total, String name, String sdt,String address, String status, String thanhtoan){
+        try (Handle handle = JDBIConnector.me().open()){
+            String query ="INSERT INTO dondathang(madonhang, makh, ngaytao, tongdh, ten, sdt, diachi, trangthai, thanhtoan) VALUES (?, ?, NOW(), ?, ?, ?, ?, ?, ?)";
+            Update update = handle.createUpdate(query)
+                    .bind(0, id)
+                    .bind(1, makh)
+                    .bind(2, total)
+                    .bind(3, name)
+                    .bind(4, sdt)
+                    .bind(5, address)
+                    .bind(6, status)
+                    .bind(7, thanhtoan);
+            update.execute();
+        }
+
     }
 }

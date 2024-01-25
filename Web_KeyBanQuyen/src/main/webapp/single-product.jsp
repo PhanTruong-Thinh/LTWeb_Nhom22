@@ -2,6 +2,12 @@
 <%@ page import="java.util.List" %>
 <%@ page import="vn.edu.hcmuaf.model.Image" %>
 <%@ page import="vn.edu.hcmuaf.dao.ImageDao" %>
+<%@ page import="vn.edu.hcmuaf.dao.StatusDao" %>
+<%@ page import="vn.edu.hcmuaf.dao.KhoDao" %>
+<%@ page import="vn.edu.hcmuaf.model.Cart" %>
+<%@ page import="java.util.TreeMap" %>
+<%@ page import="java.util.Set" %>
+<%@ page import="vn.edu.hcmuaf.dao.ProductsDao" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
@@ -34,13 +40,20 @@
     <![endif]-->
 </head>
 <body>
+<%
+    Products products = (Products) session.getAttribute("de");
+    if (products == null) products = new Products();
+    List<Image> images = ImageDao.getImageProductByID(products.getMaSP());
+    Cart cart = (Cart) session.getAttribute("cart");
+    if (cart == null) cart = new Cart();
+    TreeMap<String, Integer> list = cart.getList();
+    long total=0;
+    Set<String> setkey = list.keySet();
+    for (String k:setkey){
+        total += ProductsDao.getPriceProduct(k) * list.get(k);
+    }
+%>
 
-<form action="./View" method="post">
-    <%
-        Products products = (Products) session.getAttribute("view");
-        if (products==null) products = new Products();
-        List<Image> images = ImageDao.getImageProductByID(products.getMaSP());
-    %>
     <div class="header-area">
         <div class="container">
             <div class="row">
@@ -50,7 +63,7 @@
                             <li><a href="#"><i class="fa fa-user"></i> Tài khoản của tôi</a></li>
                             <li><a href="#"><i class="fa fa-heart"></i> Danh sách mong muốn</a></li>
                             <li><a href="cart.jsp"><i class="fa fa-user"></i> Giỏ hàng </a></li>
-                            <li><a href="checkout.html"><i class="fa fa-user"></i> Thanh toán</a></li>
+                            <li><a href="checkout.jsp"><i class="fa fa-user"></i> Thanh toán</a></li>
                             <li><a href="#"><i class="fa fa-user"></i> Đăng nhập</a></li>
                         </ul>
                     </div>
@@ -94,7 +107,7 @@
 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="cart.jsp">Giỏ hàng - <span class="cart-amunt">1.000.000đ</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                        <a href="cart.jsp">Giỏ hàng - <span class="cart-amunt"><%=Products.priceFormat(total)%></span> <i class="fa fa-shopping-cart"></i> <span class="product-count"><%=list.size()%></span></a>
                     </div>
                 </div>
             </div>
@@ -232,15 +245,14 @@
                                         <div class="quantity">
                                             <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quan" min="1" step="1">
                                         </div>
-                                        <button name="command" class="add_to_cart_button" type="submit" value="insert">Thêm vào giỏ hàng</button>
+                                        <button name="command" value="insert"  class="add_to_cart_button" type="submit" >Thêm vào giỏ hàng</button>
                                     </form>
 
                                     <div class="product-inner-category">
-                                        <p>Hãng: <a href=""><%=products.getHangSX()%></a>. Tags: <a href="">tuyệt vời</a>, <a href="">tốt nhất</a>, <a href="">giảm giá</a>, <a href="">shoes</a>. </p>
+                                        <p>Hãng: <a href=""><%=products.getHangSX()%></a></p>
                                         <p>Bảo hành: <a href=""><%=products.getBaoHanh()%></a> </p>
                                         <p>Hạng sử dụng: <a href=""><%=products.getBaoHanh()%></a> </p>
                                         <p>Thiết bị: <a href=""><%=products.getNumberUser()%></a> </p>
-                                        <p>Trạng thái: <a href=""><%=products.getTinhTrang()%></a> </p>
 
                                     </div>
 
@@ -380,7 +392,6 @@
         </div>
     </div>
 
-</form>
 
 
 <div class="footer-top-area">

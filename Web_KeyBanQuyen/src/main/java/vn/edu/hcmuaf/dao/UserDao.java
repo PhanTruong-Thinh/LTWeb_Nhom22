@@ -78,9 +78,34 @@ public class UserDao {
             result = handle.createQuery(query)
                     .bind(0, id)
                     .mapTo(String.class)
-                    .one();
+                    .findOne()
+                    .orElse(null);
         }
         return result;
+    }
+
+    public static User getUserName(String name){
+        User user = new User();
+        try (Handle handle = JDBIConnector.me().open()){
+            String query ="SELECT makh, `name`, address, email, phone, username, `password`, `level`, `create` FROM customers WHERE username=?";
+            Query Ojb = handle.createQuery(query)
+                    .bind(0, name);
+            user = Ojb.map((rs,ctx)->
+                    new User(
+                            rs.getString("makh"),
+                            rs.getString("name"),
+                            rs.getString("address"),
+                            rs.getString("email"),
+                            rs.getString("phone"),
+                            rs.getString("username"),
+                            rs.getString("password"),
+                            rs.getInt("level"),
+                            rs.getTimestamp("create")
+                    )).findOne().orElse(null);
+        }catch (Exception e){
+
+        }
+        return user;
     }
 
     public static void main(String[] args) {

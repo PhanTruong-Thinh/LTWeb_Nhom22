@@ -6,6 +6,7 @@
 <%@ page import="java.util.TreeMap" %>
 <%@ page import="vn.edu.hcmuaf.model.Directorys" %>
 <%@ page import="vn.edu.hcmuaf.dao.DirectorysDao" %>
+<%@ page import="vn.edu.hcmuaf.model.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -39,16 +40,19 @@
 </head>
 <body>
 <%
-//    Cart cart = (Cart) session.getAttribute("cart");
-////    TreeMap<String, Integer> list = cart.getList();
-//    long total=0;
-//    Set<String> setkey = cart.getList().keySet();
-//    for (String k:setkey){
-//        total += ProductsDao.getPriceProduct(k) * cart.getList().get(k);
-//    }
+    Cart cart = (Cart) session.getAttribute("cart");
+    if (cart == null) cart = new Cart();
+    TreeMap<String, Integer> list = cart.getList();
+    long total=0;
+    Set<String> setkey = list.keySet();
+    for (String k:setkey){
+        total += ProductsDao.getPriceProduct(k) * list.get(k);
+    }
 
     List<Directorys> directorys = DirectorysDao.getDirectorysAdmin();
 
+    User user = (User) session.getAttribute("auth");
+    if (user==null) user = new User();
 
 %>
 <div class="header-area">
@@ -57,11 +61,11 @@
             <div class="col-md-8">
                 <div class="user-menu">
                     <ul>
-                        <li><a href="#"><i class="fa fa-user"></i> Tài khoản của tôi</a></li>
+                        <li><a href="profile.jsp"><i class="fa fa-user"></i> Tài khoản của tôi</a></li>
                         <li><a href="#"><i class="fa fa-heart"></i> Danh sách mong muốn</a></li>
                         <li><a href="cart.jsp"><i class="fa fa-user"></i> Giỏ hàng </a></li>
-                        <li><a href="checkout.html"><i class="fa fa-user"></i> Thanh toán</a></li>
-                        <li><a href="Login.html"><i class="fa fa-user"></i> Đăng nhập</a></li>
+                        <li><a href="checkout.jsp"><i class="fa fa-user"></i> Thanh toán</a></li>
+                        <li><a href="Login.jsp"><i class="fa fa-user"></i> Đăng nhập</a></li>
                     </ul>
                 </div>
             </div>
@@ -104,7 +108,7 @@
 
             <div class="col-sm-6">
                 <div class="shopping-item">
-<%--                    <a href="cart.jsp">Giỏ hàng - <span class="cart-amunt"><%=Products.priceFormat(total)%></span> <i class="fa fa-shopping-cart"></i> <span class="product-count"><%=cart.getList().size()%></span></a>--%>
+                    <a href="cart.jsp">Giỏ hàng - <span class="cart-amunt"><%=Products.priceFormat(total)%></span> <i class="fa fa-shopping-cart"></i> <span class="product-count"><%=cart.getList().size()%></span></a>
                 </div>
             </div>
         </div>
@@ -340,11 +344,8 @@
                 <div class="product-option-shop">
                     <form action="./View" method="post">
                         <input name="maview" value="<%=p.getMaSP()%>" style="display: none">
-                        <button type="submit"><a class="add_to_cart_button" type="submit" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="">Xem</a>
-                        </button>
-
+                        <button   type="submit" style="width: 250px; color: white; background: #00acee">Xem</button>
                     </form>
-
                 </div>
             </div>
         </div>

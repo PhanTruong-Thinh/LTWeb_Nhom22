@@ -77,7 +77,7 @@
     <%
         Oders oders = (Oders) request.getAttribute("oder");
         if (oders==null) oders = new Oders();
-        List<OderDetail> oder = (List<OderDetail>) OderDetailDao.getOder(oders.getId());
+        List<OderDetail> oder =  OderDetailDao.getOder(oders.getId());
         if (oder == null) oder = new ArrayList<>();
     %>
     <div class="left-sidebar-pro">
@@ -230,7 +230,7 @@
                                                         </li>
                                                         <li><a href="#"><span class="icon nalika-settings author-log-ic"></span> Cài đặt</a>
                                                         </li>
-                                                        <li><a href="login.jsp"><span class="icon nalika-unlocked author-log-ic"></span> Đăng xuất</a>
+                                                        <li><a href="logi2n.jsp"><span class="icon nalika-unlocked author-log-ic"></span> Đăng xuất</a>
                                                         </li>
                                                     </ul>
                                                 </li>

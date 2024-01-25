@@ -28,6 +28,18 @@ public class KhoDao {
             return result;
         }
 
+    public static String getStatuProduct(String id){
+        String result="";
+        try (Handle handle=JDBIConnector.me().open()){
+            String query = "SELECT trangthai FROM kho WHERE masp=?";
+            result = handle.createQuery(query)
+                    .bind(0,id)
+                    .mapTo(String.class)
+                    .one();
+        }
+        return result;
+    }
+
         public static void updateQuantilyProduct(String id, int number, boolean bo){
             try (Handle handle = JDBIConnector.me().open()){
                 String query ="UPDATE kho SET soluong = ? WHERE masp=?";

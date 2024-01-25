@@ -1,7 +1,9 @@
 package vn.edu.hcmuaf.service;
 
 import vn.edu.hcmuaf.dao.KhoDao;
+import vn.edu.hcmuaf.dao.ProductsDao;
 import vn.edu.hcmuaf.model.Cart;
+import vn.edu.hcmuaf.model.Products;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -44,6 +46,9 @@ public class CartServlet extends HttpServlet {
 
         }
         }
+        Products products = (Products) session.getAttribute("de");
+        products = ProductsDao.getProduct(id);
+        session.setAttribute("de", products);
         req.getRequestDispatcher("./single-product.jsp").forward(req,resp);
     }
 

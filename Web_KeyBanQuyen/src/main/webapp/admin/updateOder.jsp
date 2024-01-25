@@ -233,7 +233,7 @@
                                                     </li>
                                                     <li><a href="#"><span class="icon nalika-settings author-log-ic"></span> Cài đặt</a>
                                                     </li>
-                                                    <li><a href="login.jsp"><span class="icon nalika-unlocked author-log-ic"></span> Đăng xuất</a>
+                                                    <li><a href="logi2n.jsp"><span class="icon nalika-unlocked author-log-ic"></span> Đăng xuất</a>
                                                     </li>
                                                 </ul>
                                             </li>

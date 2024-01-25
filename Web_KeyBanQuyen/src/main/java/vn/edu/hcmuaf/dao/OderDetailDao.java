@@ -3,6 +3,7 @@ package vn.edu.hcmuaf.dao;
 import org.jdbi.v3.core.Handle;
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.core.statement.Query;
+import org.jdbi.v3.core.statement.Update;
 import vn.edu.hcmuaf.db.JDBIConnector;
 import vn.edu.hcmuaf.model.OderDetail;
 
@@ -28,5 +29,18 @@ public class OderDetailDao {
             return List.of();
         }
         return  oderDetails;
+    }
+    public static void insert(String id, String masp, int number, long total ){
+        try (Handle handle=JDBIConnector.me().open()){
+            String query = "INSERT INTO chitietdonhang(madh, masp, soluong, tonggia) VALUES (?, ?, ?, ?)";
+            Update update = handle.createUpdate(query)
+                    .bind(0, id)
+                    .bind(1, masp)
+                    .bind(2, number)
+                    .bind(3, total);
+            update.execute();
+        }catch (Exception e){
+
+        }
     }
 }

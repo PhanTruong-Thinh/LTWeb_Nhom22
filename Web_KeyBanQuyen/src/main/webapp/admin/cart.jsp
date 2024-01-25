@@ -4,6 +4,7 @@
 <%@ page import="vn.edu.hcmuaf.dao.UserDao" %>
 <%@ page import="vn.edu.hcmuaf.dao.StatusDao" %>
 <%@ page import="vn.edu.hcmuaf.model.Products" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html class="no-js" lang="en">
 
@@ -74,8 +75,11 @@
 
 <%
     List<Oders> oders1 = OdersDao.getOdersAdmin();
+    if (oders1==null) oders1= new ArrayList<>();
     List<Oders> oders2 = OdersDao.getOdersStatusNews();
+    if (oders2==null) oders2= new ArrayList<>();
     List<Oders> oders3 = OdersDao.getOdersStatusCanel();
+    if (oders3==null) oders3= new ArrayList<>();
 %>
 
 <div class="left-sidebar-pro">
@@ -246,7 +250,7 @@
                                                             class="icon nalika-settings author-log-ic"></span> Cài
                                                         đặt</a>
                                                     </li>
-                                                    <li><a href="login.jsp"><span
+                                                    <li><a href="logi2n.jsp"><span
                                                             class="icon nalika-unlocked author-log-ic"></span> Đăng xuất</a>
                                                     </li>
                                                 </ul>
@@ -521,28 +525,26 @@
                                             <th>Cài đặt</th>
                                         </tr>
                                         <%
-                                            for (Oders oders : oders2){%>
-
-
+                                            for (Oders o : oders2){%>
                                         <tr>
-                                            <td><%=oders.getId()%></td>
-                                            <td><%=UserDao.getName(oders.getId())%></td>
-                                            <td><%=StatusDao.getName(oders.getStatus())%></td>
-                                            <td><%=oders.getDate()%>></td>
-                                            <td><%=Products.priceFormat(oders.getTotal())%></td>
+                                            <td><%=o.getId()%></td>
+                                            <td><%=UserDao.getName(o.getMaKH())%></td>
+                                            <td><%=StatusDao.getName(o.getStatus())%></td>
+                                            <td><%=o.getDate()%></td>
+                                            <td><%=Products.priceFormat(o.getTotal())%></td>
                                             <td>
                                                 <form action="./OderDetail" method="post">
-                                                    <input name="id" value="<%=oders.getId()%>">
-                                                    <button data-toggle="tooltip" title="submit" class=""><a
+                                                    <input name="id" value="<%=o.getId()%>" style="display: none">
+                                                    <button data-toggle="tooltip" title="submit" class="" style="background: none"><a
                                                             href="product-cart.jsp"><i class="fa fa-pencil-square-o"
                                                                                        aria-hidden="true"></i>xem chi tiết</a></button>
                                                 </form>
-                                                <a href="product-cart.jsp">xem chi tiết</a>
+
                                             </td>
-                                            <td><%=StatusDao.getName(oders.getThanhtoan())%></td>
+                                            <td><%=StatusDao.getName(o.getThanhtoan())%></td>
                                             <td>
                                                 <form action="./UpdateStatusOder" method="post">
-                                                    <input name="madh" value="<%=oders.getId()%>" style="display: none">
+                                                    <input name="madh" value="<%=o.getId()%>" style="display: none">
                                                     <button data-toggle="tooltip" title="submit" class="pd-setting-ed"><a
                                                             href="updateOder.jsp"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></button>
                                                 </form>

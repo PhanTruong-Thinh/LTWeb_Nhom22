@@ -1,6 +1,7 @@
 package vn.edu.hcmuaf.model;
 
 import java.util.Date;
+import java.util.Random;
 
 public class Oders {
     private String id;
@@ -107,6 +108,18 @@ public class Oders {
 
     public void setThanhtoan(String thanhtoan) {
         this.thanhtoan = thanhtoan;
+    }
+
+    public static String generateRandomNumbers() {
+        StringBuilder randomNumbers = new StringBuilder();
+
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            int randomNumber = random.nextInt(10); // Sinh số ngẫu nhiên từ 0 đến 9
+            randomNumbers.append(randomNumber);
+        }
+
+        return randomNumbers.toString();
     }
 
     @Override

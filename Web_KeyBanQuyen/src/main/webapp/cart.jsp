@@ -58,7 +58,7 @@
                             <li><a href="#"><i class="fa fa-user"></i> Tài khoản của tôi</a></li>
                             <li><a href="#"><i class="fa fa-heart"></i> Danh sách mong muốn</a></li>
                             <li><a href="cart.jsp"><i class="fa fa-user"></i> Giỏ hàng </a></li>
-                            <li><a href="checkout.html"><i class="fa fa-user"></i> Thanh toán</a></li>
+                            <li><a href="checkout.jsp"><i class="fa fa-user"></i> Thanh toán</a></li>
                             <li><a href="#"><i class="fa fa-user"></i> Đăng nhập</a></li>
                         </ul>
                     </div>
@@ -219,7 +219,6 @@
                                             <td class="product-remove">
                                                 <form action="./CartRemove" method="post">
                                                     <input name="masp" value="<%=k%>" style="display: none">
-<%--                                                    <button name="com" value="remove">×</button>--%>
                                                     <input type="submit" value="X" name="com" class="button">
                                                 </form>
 
@@ -233,7 +232,7 @@
 
                                             <td class="product-name">
                                                 <input name="id[]" value="<%=product.getMaSP()%>" style="display: none">
-                                                <a href=""><%=product.getName()%></a>
+                                                <a href=""><%=product.getName()+" "+product.getVersion()%></a>
                                             </td>
 
                                             <td class="product-price">
@@ -242,9 +241,9 @@
 
                                             <td class="product-quantity">
                                                 <div class="quantity buttons_added">
-                                                    <input type="button" class="minus" value="-">
+                                                    <input type="button" class="minus" value="-" style="display: none">
                                                     <input name="so[]" type="number" size="4" class="input-text qty text" title="Qty" value="<%=list.get(k)%>" min="0" step="1">
-                                                    <input type="button" class="plus" value="+">
+                                                    <input type="button" class="plus" value="+" style="display: none">
                                                 </div>
                                             </td>
 
@@ -264,7 +263,7 @@
                                                 <input type="submit" value="Cập nhật" name="com" class="button">
 
 
-                                                <input  type="submit" value="Thanh toán" name="proceed" onclick="window.location.href='checkout.html'; return false;" class="checkout-button button alt wc-forward">
+                                                <input  type="submit" value="Thanh toán" name="proceed" onclick="window.location.href='checkout.jsp'; return false;" class="checkout-button button alt wc-forward">
 
                                             </td>
                                         </tr>

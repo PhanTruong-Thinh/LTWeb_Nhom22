@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<%@ page import="vn.edu.hcmuaf.model.User" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
 	<title>Đăng nhập</title>
@@ -28,71 +29,76 @@
 <!--===============================================================================================-->
 </head>
 <body>
-	
-	<div class="limiter">
-		<div class="container-login100" style="background-image: url('img/bg-01.jpg');">
-			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-				<form class="login100-form validate-form">
+<%
+	String err = (String) request.getAttribute("err");
+	if (err==null) err="";
+
+%>
+	<form action="./Login" method="post">
+		<div class="limiter">
+			<div class="container-login100" style="background-image: url('img/bg-01.jpg');">
+				<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+					<form class="login100-form validate-form">
 					<span class="login100-form-title p-b-49" style="font-family:  Arial; font-size: 36px; font-weight: bold">
 						Đăng Nhập
 					</span>
-
-					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
-						<span class="label-input100" style="font-family:  Arial; font-size: 16px">Tên đăng nhập</span>
-						<input class="input100" type="text" name="username" placeholder="Tên đăng nhập">
-						<span class="focus-input100" data-symbol="&#xf206;"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<span class="label-input100" style="font-family:  Arial; font-size: 16px">Mật khẩu</span>
-						<input class="input100" type="password" name="pass" placeholder="Mật khẩu">
-						<span class="focus-input100" data-symbol="&#xf190;"></span>
-					</div>
-					
-					<div class="text-right p-t-8 p-b-31">
-						<a href="forgot_password.html">
-							Quên mật khẩu?
-						</a>
-					</div>
-					
-					<div class="container-login100-form-btn">
-						<div class="wrap-login100-form-btn">
-							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn" style="font-family:  Arial" >
-								<a href="Login.html">Đăng Nhập</a>
-							</button>
+						<p style="color: red; margin-left: 70px"><%=err%></p>
+						<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+							<span class="label-input100" style="font-family:  Arial; font-size: 16px">Tên đăng nhập</span>
+							<input class="input100" type="text" name="username" placeholder="Tên đăng nhập">
+							<span class="focus-input100" data-symbol="&#xf206;"></span>
 						</div>
-					</div>
 
-					<div class="txt1 text-center p-t-54 p-b-20">
+						<div class="wrap-input100 validate-input" data-validate="Password is required">
+							<span class="label-input100" style="font-family:  Arial; font-size: 16px">Mật khẩu</span>
+							<input class="input100" type="password" name="pass" placeholder="Mật khẩu">
+							<span class="focus-input100" data-symbol="&#xf190;"></span>
+						</div>
+
+						<div class="text-right p-t-8 p-b-31">
+							<a href="forgot_password.html">
+								Quên mật khẩu?
+							</a>
+						</div>
+
+						<div class="container-login100-form-btn">
+							<div class="wrap-login100-form-btn">
+								<div class="login100-form-bgbtn"></div>
+								<button type="submit" class="login100-form-btn" style="font-family:  Arial" >Đăng Nhập</button>
+							</div>
+						</div>
+
+						<div class="txt1 text-center p-t-54 p-b-20">
 						<span>
 							Hoặc
 						</span>
-					</div>
+						</div>
 
-					<div class="flex-c-m">
-						<a href="#" class="login100-social-item bg1">
-							<i class="fa fa-facebook"></i>
-						</a>
+						<div class="flex-c-m">
+							<a href="#" class="login100-social-item bg1">
+								<i class="fa fa-facebook"></i>
+							</a>
 
-						<a href="#" class="login100-social-item bg2">
-							<i class="fa fa-twitter"></i>
-						</a>
+							<a href="#" class="login100-social-item bg2">
+								<i class="fa fa-twitter"></i>
+							</a>
 
-						<a href="#" class="login100-social-item bg3">
-							<i class="fa fa-google"></i>
-						</a>
-					</div>
+							<a href="#" class="login100-social-item bg3">
+								<i class="fa fa-google"></i>
+							</a>
+						</div>
 
-					<div class="flex-col-c p-t-20">
-						<a href="sign_up.html" class="txt2">
-							<u >Đăng ký</u>
-						</a>
-					</div>
-				</form>
+						<div class="flex-col-c p-t-20">
+							<a href="sign_up.html" class="txt2">
+								<u >Đăng ký</u>
+							</a>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
-	</div>
+	</form>
+
 	
 
 	<div id="dropDownSelect1"></div>
